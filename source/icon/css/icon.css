@@ -1,0 +1,21 @@
+.iconfont {
+  font-size: 1.1em;
+  font-weight: 500;
+}
+
+.icon-CN_csdnnet{
+	font-size: 0.9em;
+}
+
+/*.faa-float{
+	animation: Updown 1s infinite alternate;
+}
+@keyframes Updown {
+	from {
+		margin-top: 30px;
+  }
+to {
+	margin-top: 10px;
+  }
+}
+*/

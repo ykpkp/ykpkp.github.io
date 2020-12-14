@@ -1,0 +1,65 @@
+- class_name: 特别鸣谢
+  class_desc: 主题作者及主题框架
+  link_list:
+    - name: JerryC
+      link: https://jerryc.me/
+      avatar: https://jerryc.me/image/avatar.png
+      descr: 今日事,今日畢
+    - name: Hexo
+      link: https://hexo.io/zh-tw/
+      avatar: https://d33wubrfki0l68.cloudfront.net/6657ba50e702d84afb32fe846bed54fba1a77add/827ae/logo.svg
+      descr: 快速、簡單且強大的網誌框架
+
+
+- class_name: 友情链接
+  class_desc: 那些人，那些事
+  link_list:
+    - name: Heo
+      link: 'https://blog.zhheo.com/'
+      avatar: 'https://blog.zhheo.com/img/avatar.png'
+      descr: 爱折腾的设计师
+    - name: Yang
+      link: https://yangkunpeng.top
+      avatar: https://i.loli.net/2020/11/12/wj7pdVmAfzDhKXQ.png
+      descr: 悟
+    
+
+- class_name: 媒体
+  class_desc: 在线下载
+  link_list:
+    - name: 动漫花园
+      link: https://www.dongmanhuayuan.com/
+      avatar: https://www.dongmanhuayuan.com/static/www/images/logo.png
+      descr: 动漫资源下载
+    - name: FCPX资源站
+      link: https://www.mfcpx.com/
+      avatar: https://i.loli.net/2020/11/16/9yDNmvni24ZBLcb.png
+      descr: Final Cut Pro X软件资源站
+    - name: 短视频下载
+      link: https://imyshare.com/parsevideo/
+      avatar: https://i.loli.net/2020/11/16/j58yBYPfQOUqhZu.png
+      descr: 抖音/快手/微视/西瓜视频等
+
+- class_name: 实用工具
+  class_desc: 在线小工具
+  link_list:
+    - name: 别字
+      link: http://www.biezi.com/
+      avatar: https://i.loli.net/2020/11/16/FakOMJpIbPB5lVq.png
+      descr: 在线错别字检查
+    - name: 诚华OCR
+      link: https://zhcn.109876543210.com/
+      avatar: 
+      descr: 免费的在线OCR识别
+    - name: 熊猫压缩
+      link: https://tinypng.com/
+      avatar: https://i.loli.net/2020/11/16/kA3zn6cJIDOG21i.png
+      descr: 在线图片压缩工具
+
+- class_name: 下载软件
+  class_desc: 软件下载的网站
+  link_list:
+    - name: MacWk
+      link: https://www.macwk.com/soft/all/p1
+      avatar: https://i.loli.net/2020/11/16/6tFOBZYbfudra5J.png
+      descr: 免费的Mac软件下载，无广告

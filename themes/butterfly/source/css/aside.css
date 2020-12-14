@@ -1,0 +1,38 @@
+/*侧边栏*/
+#aside_content .card-widget:hover{
+	box-shadow: 0.5em 0.5em 20px #A9A9A9;
+	background-color: #F5F5F5;
+}
+
+.tupian:hover{
+	content: url('https://i.loli.net/2020/11/19/lK1zFbsP2naGV6c.png');
+}
+
+#aside_content{
+	background: var(--light_bg_color);
+}
+
+/* 滚动条 */
+
+::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #e58a8a;
+    background-image: -webkit-linear-gradient( 45deg, rgba(255, 255, 255, 0.4) 25%, transparent 25%, transparent 50%, rgba(255, 255, 255, 0.4) 50%, rgba(255, 255, 255, 0.4) 75%, transparent 75%, transparent);
+    border-radius: 2em;
+}
+
+::-webkit-scrollbar-corner {
+    background-color: transparent;
+}
+
+::-moz-selection {
+    color: #fff;
+    background-color: #e58a8a;
+}
+
+
+
