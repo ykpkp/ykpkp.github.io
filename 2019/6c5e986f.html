@@ -1,0 +1,364 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>7段显示器 分别显示0-9数字 | Peng's Blog</title><meta name="keywords" content="Arduino"><meta name="author" content="Yang"><meta name="copyright" content="Yang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="在使用7段显示器前我们需要找到公共共阴和公共共阳首先，我们找个电源（3到5伏）和1个1K（几百的也欧的也行）的电阻， VCC串接个电阻后和GND接在任意2个脚上，组合有很多，但总有一个LED会发光的找到一个就够了，，然后用GND不动，VCC（串电阻）逐个碰剩下的脚，如果有多个LED（一般是8个），那它就是共阴的了。相反用VCC不动，GND逐个碰剩下的脚，如果有多个LED（一般是8个），那它就是共">
+<meta property="og:type" content="article">
+<meta property="og:title" content="7段显示器 分别显示0-9数字">
+<meta property="og:url" content="https://www.yangkunpeng.top/2019/6c5e986f.html">
+<meta property="og:site_name" content="Peng&#39;s Blog">
+<meta property="og:description" content="在使用7段显示器前我们需要找到公共共阴和公共共阳首先，我们找个电源（3到5伏）和1个1K（几百的也欧的也行）的电阻， VCC串接个电阻后和GND接在任意2个脚上，组合有很多，但总有一个LED会发光的找到一个就够了，，然后用GND不动，VCC（串电阻）逐个碰剩下的脚，如果有多个LED（一般是8个），那它就是共阴的了。相反用VCC不动，GND逐个碰剩下的脚，如果有多个LED（一般是8个），那它就是共">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/11/14/e9GO8uHjWfkMy6N.png">
+<meta property="article:published_time" content="2019-05-19T12:44:10.000Z">
+<meta property="article:modified_time" content="2020-11-14T13:13:55.955Z">
+<meta property="article:author" content="Yang">
+<meta property="article:tag" content="Arduino">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/11/14/e9GO8uHjWfkMy6N.png"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://www.yangkunpeng.top/2019/6c5e986f"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin="crossorigin"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta name="baidu-site-verification" content="code-X1ZfiwcvRM"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?812d3bbdd74610181745ac2476e809f1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=zmlZw0E_GBM5XG28oEbINgVrGoDoL-Ek5h7PHQZGlXM"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'zmlZw0E_GBM5XG28oEbINgVrGoDoL-Ek5h7PHQZGlXM');
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"文章距离上次更已有","messageNext":"天，其中的内容可能已经过时。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Yang","link":"链接: ","source":"来源: Peng's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-center"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: false,
+  postUpdate: '2020-11-14 21:13:55'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="shenma-site-verification" content="2ae8ef4fe04d1d720b5ede9541aed688_1606103594"><meta name="360-site-verification" content="0304d56208b132e5f13a05c303a89f42" /><meta name="sogou_site_verification" content="8EspEicNoZ"/><link rel="stylesheet" href="//at.alicdn.com/t/font_2204171_z160zzpghqc.css"/><link rel="stylesheet" href="/news/css/news.css"/><link rel="stylesheet" href="/clock/css/clock.css"/><link rel="stylesheet" href="/icon/css/icon.css"/><link rel="stylesheet" href="/css/aside.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.css"/><link rel="stylesheet" href="/swiper/swiper.min.css"><link rel="stylesheet" href="/swiper/swiperstyle.css"><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Peng's Blog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://i.loli.net/2020/11/12/wj7pdVmAfzDhKXQ.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive faa-float animated"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/Music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/images/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></li><li><a class="site-page" href="/bangumi/"><i class="fa-fw iconfont icon-dianshiji"></i><span> 追番</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/11/14/e9GO8uHjWfkMy6N.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Peng's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive faa-float animated"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/Music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/images/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></li><li><a class="site-page" href="/bangumi/"><i class="fa-fw iconfont icon-dianshiji"></i><span> 追番</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">7段显示器 分别显示0-9数字</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-05-19T12:44:10.000Z" title="发表于 2019-05-19 20:44:10">2019-05-19</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-14T13:13:55.955Z" title="更新于 2020-11-14 21:13:55">2020-11-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E7%A1%AC%E4%BB%B6/">硬件</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">315</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>1分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p> <em>在使用7段显示器前我们需要找到公共共阴和公共共阳首先，我们找个电源（3到5伏）和1个1K（几百的也欧的也行）的电阻， VCC串接个电阻后和GND接在任意2个脚上，组合有很多，但总有一个LED会发光的找到一个就够了，，然后用GND不动，VCC（串电阻）逐个碰剩下的脚，如果有多个LED（一般是8个），那它就是共阴的了。相反用VCC不动，GND逐个碰剩下的脚，如果有多个LED（一般是8个），那它就是共阳的了。</em></p>
+<a id="more"></a>
+<p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2020/11/14/PrKAxd1BI8t9X4s.png"></p>
+<p>代码：</p>
+<pre><code>int i=0;
+int j=0;
+int k=0;
+
+void setup()
+&#123;
+  for(i=3;i&lt;=10;i++)
+  &#123;
+    pinMode(i,OUTPUT);
+  &#125;
+  for(i=3;i&lt;=10;i++)
+  &#123;
+    digitalWrite(i,HIGH);
+  &#125;
+&#125;
+
+void loop()
+&#123;
+  int num[10][7]=&#123;
+    &#123;3,4,6,7,8,9&#125;,
+    &#123;8,9&#125;,
+    &#123;3,5,6,7,8&#125;,
+    &#123;3,5,7,8,9&#125;,
+    &#123;4,5,8,9&#125;,
+    &#123;3,4,5,7,9&#125;,
+    &#123;3,4,5,6,7,9&#125;,
+    &#123;3,8,9&#125;,
+    &#123;3,4,5,6,7,8,9&#125;,
+    &#123;3,4,5,7,8,9&#125;
+  &#125;;
+  for(i=0;i&lt;10;i++)
+  &#123;
+    for(j=0;j&lt;7;j++)
+    &#123;
+      digitalWrite(num[i][j],LOW); 
+    &#125;
+    delay(500);
+    for(k=3;k&lt;=9;k++)
+    &#123;
+      digitalWrite(k,HIGH);
+    &#125;
+    delay(500);
+  &#125;
+&#125;</code></pre>
+<p>引脚图：</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2020/11/14/ZxA6ftvBEJkHmcg.png"></p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" rel="external nofollow noreferrer">Yang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.yangkunpeng.top/2019/6c5e986f.html">https://www.yangkunpeng.top/2019/6c5e986f.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.yangkunpeng.top" target="_blank">Peng's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Arduino/">Arduino</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/11/14/e9GO8uHjWfkMy6N.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2019/98c03907.html"><img class="prev-cover" data-lazy-src="https://i.loli.net/2020/11/14/54drkQCEMB8vqsT.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">python控制arduino uno R3--------pyfirmata篇</div></div></a></div><div class="next-post pull-right"><a href="/2019/de2bfe18.html"><img class="next-cover" data-lazy-src="https://i.loli.net/2020/11/14/iKT4NjaoAemtghc.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">8X8的 LED灯显示 各种形状</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2019/de2bfe18.html" title="8X8的 LED灯显示 各种形状"><img class="cover" data-lazy-src="https://i.loli.net/2020/11/14/iKT4NjaoAemtghc.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-05-19</div><div class="title">8X8的 LED灯显示 各种形状</div></div></a></div><div><a href="/2019/ba21a5d1.html" title="Arduino控制PS2无线手柄"><img class="cover" data-lazy-src="https://i.loli.net/2020/11/14/7914Auzfl5pTnUX.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-05-19</div><div class="title">Arduino控制PS2无线手柄</div></div></a></div><div><a href="/2019/98c03907.html" title="python控制arduino uno R3--------pyfirmata篇"><img class="cover" data-lazy-src="https://i.loli.net/2020/11/14/54drkQCEMB8vqsT.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-05-19</div><div class="title">python控制arduino uno R3--------pyfirmata篇</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://i.loli.net/2020/11/12/wj7pdVmAfzDhKXQ.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Yang</div><div class="author-info__description">Today is not easy</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" href="JavaScript:addBookmark()" rel="external nofollow noreferrer"><i class="iconfont icon-icon_favorite"></i><span>收藏我的博客</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ykpkp" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/9120863" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab iconfont icon-bilibili-line"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=100570227" rel="external nofollow noreferrer" target="_blank" title="网易云"><i class="fab iconfont icon-wangyiyunyinyuemusic1193417easyiconnet"></i></a><a class="social-icon" href="https://www.yangkunpeng.top/atom.xml" target="_blank" title="RSS订阅"><i class="fab iconfont icon-rss"></i></a><a class="social-icon" href="https://blog.csdn.net/qq_16601517" rel="external nofollow noreferrer" target="_blank" title="CSDN"><i class="fab iconfont icon-CN_csdnnet"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/e23bce6.html" title="SpringMVCHelloWorld"><img data-lazy-src="https://i.loli.net/2020/11/22/giG9mXWb1aqeDdN.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringMVCHelloWorld"/></a><div class="content"><a class="title" href="/2020/e23bce6.html" title="SpringMVCHelloWorld">SpringMVCHelloWorld</a><time datetime="2020-11-22T11:22:34.000Z" title="发表于 2020-11-22 19:22:34">2020-11-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/e6d89b39.html" title="struts2入门例子登录demo"><img data-lazy-src="https://i.loli.net/2020/11/22/rqx3tEAFLCNGzR9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="struts2入门例子登录demo"/></a><div class="content"><a class="title" href="/2020/e6d89b39.html" title="struts2入门例子登录demo">struts2入门例子登录demo</a><time datetime="2020-11-22T11:10:37.000Z" title="发表于 2020-11-22 19:10:37">2020-11-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/bfdf68bf.html" title="mysql 8.0.12压缩包解压后找不到data文件夹解决办法"><img data-lazy-src="https://i.loli.net/2020/11/22/fxiTrJY9UOV7RDm.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="mysql 8.0.12压缩包解压后找不到data文件夹解决办法"/></a><div class="content"><a class="title" href="/2020/bfdf68bf.html" title="mysql 8.0.12压缩包解压后找不到data文件夹解决办法">mysql 8.0.12压缩包解压后找不到data文件夹解决办法</a><time datetime="2020-11-22T10:49:51.000Z" title="发表于 2020-11-22 18:49:51">2020-11-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/abb6c0d3.html" title="git pull成功本地代码没更新"><img data-lazy-src="https://i.loli.net/2020/11/14/YTKVpCyaJigsDz1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git pull成功本地代码没更新"/></a><div class="content"><a class="title" href="/2020/abb6c0d3.html" title="git pull成功本地代码没更新">git pull成功本地代码没更新</a><time datetime="2020-11-14T11:03:48.000Z" title="发表于 2020-11-14 19:03:48">2020-11-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/42291650.html" title="面向对象之封装"><img data-lazy-src="https://i.loli.net/2020/11/22/9yVaRZDGSL8Ap2U.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面向对象之封装"/></a><div class="content"><a class="title" href="/2020/42291650.html" title="面向对象之封装">面向对象之封装</a><time datetime="2020-07-15T08:44:10.000Z" title="发表于 2020-07-15 16:44:10">2020-07-15</time></div></div></div></div></div></div></div></main><footer id="footer" style="background: rgba(30,144,255,0)"><div id="footer-wrap"><div class="copyright">&copy;2020 By Yang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js', () => {
+      pangu.spacingElementById('content-inner')
+    })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguFn)</script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: '4zbPdXScGjJ8NVVSwmiGcAGM-MdYXbMMI',
+      appKey: 'xWEg1HrYYVzCQwPELsFuLgwO',
+      master: '1fbf13fbea29c6b2d2d499dcd6750fef',
+      friends: '2aac3aef99a90809a1d550bdefbd34c4,70fdbfbf61ba8f816d2be29792703989',
+      placeholder: '1.建议填写QQ邮箱，评论头像采用QQ头像\n2.评论支持Markdown语法',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      
+
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/gh/lete114/CDN2/js/Valine-Lete3.2.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><script src="/js/history.js"></script><script src="/js/historyroll.js"></script><script src="/news/js/keys.js"></script><script src="/js/piao.js"></script><script src="/js/MengTitle.js"></script><script src="/swiper/swiper.min.js"></script><script src="/swiper/swiperindex.js"></script><div class="aplayer no-destroy" data-id="1403501535" data-server="netease" data-type="song" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: true,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  $('script[data-pjax]').each(function () {
+    $(this).parent().append($(this).remove())
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', 'zmlZw0E_GBM5XG28oEbINgVrGoDoL-Ek5h7PHQZGlXM', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  $(window).off('scroll')
+
+  //reset readmode
+  $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+
+})</script><script>(function(){
+  const bp = document.createElement('script');
+  const curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https'){
+  bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  bp.dataset.pjax = ''
+  const s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})()</script></div></body></html>

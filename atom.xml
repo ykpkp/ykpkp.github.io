@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>Peng&#39;s Blog</title>
+  
+  <subtitle>Yang</subtitle>
+  <link href="https://www.yangkunpeng.top/atom.xml" rel="self"/>
+  
+  <link href="https://www.yangkunpeng.top/"/>
+  <updated>2020-11-22T11:35:15.513Z</updated>
+  <id>https://www.yangkunpeng.top/</id>
+  
+  <author>
+    <name>Yang</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>SpringMVCHelloWorld</title>
+    <link href="https://www.yangkunpeng.top/2020/e23bce6.html"/>
+    <id>https://www.yangkunpeng.top/2020/e23bce6.html</id>
+    <published>2020-11-22T11:22:34.000Z</published>
+    <updated>2020-11-22T11:35:15.513Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;下载引入jar包&lt;/p&gt;
+&lt;h3 id=&quot;编写HelloContorller-java&quot;&gt;&lt;a href=&quot;#编写HelloContorller-java&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.yangkunpeng.top/categories/Java/"/>
+    
+    
+    <category term="Spring" scheme="https://www.yangkunpeng.top/tags/Spring/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>struts2入门例子登录demo</title>
+    <link href="https://www.yangkunpeng.top/2020/e6d89b39.html"/>
+    <id>https://www.yangkunpeng.top/2020/e6d89b39.html</id>
+    <published>2020-11-22T11:10:37.000Z</published>
+    <updated>2020-11-22T11:36:25.073Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;1.下载所需的jar包&lt;br&gt;下载地址：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.yangkunpeng.top/categories/Java/"/>
+    
+    
+    <category term="struts2" scheme="https://www.yangkunpeng.top/tags/struts2/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>mysql 8.0.12压缩包解压后找不到data文件夹解决办法</title>
+    <link href="https://www.yangkunpeng.top/2020/bfdf68bf.html"/>
+    <id>https://www.yangkunpeng.top/2020/bfdf68bf.html</id>
+    <published>2020-11-22T10:49:51.000Z</published>
+    <updated>2020-11-22T11:37:38.089Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;下载mysql&quot;&gt;&lt;a href=&quot;#下载mysql&quot; class=&quot;headerlink&quot; title=&quot;下载mysql&quot;&gt;&lt;/a&gt;下载mysql&lt;/h2&gt;&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="mysql" scheme="https://www.yangkunpeng.top/tags/mysql/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git pull成功本地代码没更新</title>
+    <link href="https://www.yangkunpeng.top/2020/abb6c0d3.html"/>
+    <id>https://www.yangkunpeng.top/2020/abb6c0d3.html</id>
+    <published>2020-11-14T11:03:48.000Z</published>
+    <updated>2020-11-14T13:18:52.507Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;由于本地的更改所以没有拉取成功，可以这样解决：&lt;br&gt;先使用&lt;code&gt;git stash&lt;/code&gt;将本地修改储存起来。&lt;br&gt;然后再&lt;code&gt;git pull &lt;/code&gt;就可以了呢&lt;br&gt;&lt;font color=&quot;red&quot;&gt;PS :</summary>
+        
+      
+    
+    
+    
+    
+    <category term="git" scheme="https://www.yangkunpeng.top/tags/git/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>面向对象之封装</title>
+    <link href="https://www.yangkunpeng.top/2020/42291650.html"/>
+    <id>https://www.yangkunpeng.top/2020/42291650.html</id>
+    <published>2020-07-15T08:44:10.000Z</published>
+    <updated>2020-11-22T11:33:14.704Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;面向对象&quot;&gt;&lt;a href=&quot;#面向对象&quot; class=&quot;headerlink&quot; title=&quot;面向对象&quot;&gt;&lt;/a&gt;面向对象&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;面向对象编程（OOP - Object Oriented Programing）&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.yangkunpeng.top/categories/Java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>面向对象设计原则</title>
+    <link href="https://www.yangkunpeng.top/2020/f9c29644.html"/>
+    <id>https://www.yangkunpeng.top/2020/f9c29644.html</id>
+    <published>2020-07-15T08:44:10.000Z</published>
+    <updated>2020-11-22T11:33:10.640Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;面向对象设计原则&quot;&gt;&lt;a href=&quot;#面向对象设计原则&quot; class=&quot;headerlink&quot; title=&quot;面向对象设计原则&quot;&gt;&lt;/a&gt;面向对象设计原则&lt;/h1&gt;&lt;ul&gt;
+&lt;li&gt;开 : 开闭原则&lt;/li&gt;
+&lt;li&gt;口 : 接口隔离原则&lt;/li&gt;
+&lt;li&gt;合</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.yangkunpeng.top/categories/Java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>构造函数与this关键字</title>
+    <link href="https://www.yangkunpeng.top/2019/d660badb.html"/>
+    <id>https://www.yangkunpeng.top/2019/d660badb.html</id>
+    <published>2019-11-22T12:44:10.000Z</published>
+    <updated>2020-11-22T10:44:29.919Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1 id=&quot;构造方法&quot;&gt;&lt;a href=&quot;#构造方法&quot; class=&quot;headerlink&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="Java" scheme="https://www.yangkunpeng.top/categories/Java/"/>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>python3爬虫(八)--BeautifulSoup4的基本使用</title>
+    <link href="https://www.yangkunpeng.top/2019/f0ba7350.html"/>
+    <id>https://www.yangkunpeng.top/2019/f0ba7350.html</id>
+    <published>2019-06-08T05:29:10.000Z</published>
+    <updated>2020-11-14T13:22:08.715Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;如何使用&quot;&gt;&lt;a href=&quot;#如何使用&quot; class=&quot;headerlink&quot; title=&quot;如何使用&quot;&gt;&lt;/a&gt;如何使用&lt;/h3&gt;&lt;p&gt;将一段文档传入BeautifulSoup 的构造方法,就能得到一个文档的对象, 可以传入一段字符串或一个文件句柄.&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;from bs4 import BeautifulSoup&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;soup &amp;#x3D; BeautifulSoup(open(&amp;quot;index.html&amp;quot;))&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;soup1 &amp;#x3D; BeautifulSoup(&amp;quot;&amp;lt;html&amp;gt;data&amp;lt;&amp;#x2F;html&amp;gt;&amp;quot;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(soup)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(soup1)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="python" scheme="https://www.yangkunpeng.top/categories/python/"/>
+    
+    
+    <category term="爬虫" scheme="https://www.yangkunpeng.top/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python3爬虫(七)--了解Beautiful Soup 4</title>
+    <link href="https://www.yangkunpeng.top/2019/22f91623.html"/>
+    <id>https://www.yangkunpeng.top/2019/22f91623.html</id>
+    <published>2019-06-07T15:29:10.000Z</published>
+    <updated>2020-11-14T13:22:03.851Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;Beautiful-Soup-4简介&quot;&gt;&lt;a href=&quot;#Beautiful-Soup-4简介&quot; class=&quot;headerlink&quot; title=&quot;Beautiful Soup 4简介&quot;&gt;&lt;/a&gt;Beautiful Soup 4简介&lt;/h3&gt;&lt;p&gt;Beautiful Soup 是一个可以从HTML或XML文件中提取数据的Python库.它能够通过你喜欢的转换器实现惯用的文档导航,查找,修改文档的方式.Beautiful Soup会帮你节省数小时甚至数天的工作时间.&lt;br&gt;Beautiful Soup 3 目前已经停止开发,推荐使用Beautiful Soup 4 详情查看 &lt;a href=&quot;https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html&quot;&gt;官方文档&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="python" scheme="https://www.yangkunpeng.top/categories/python/"/>
+    
+    
+    <category term="爬虫" scheme="https://www.yangkunpeng.top/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python3爬虫(六)--requests的高级操作</title>
+    <link href="https://www.yangkunpeng.top/2019/19723458.html"/>
+    <id>https://www.yangkunpeng.top/2019/19723458.html</id>
+    <published>2019-06-06T06:00:10.000Z</published>
+    <updated>2020-11-14T13:21:57.755Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;文件上传&quot;&gt;&lt;a href=&quot;#文件上传&quot; class=&quot;headerlink&quot; title=&quot;文件上传&quot;&gt;&lt;/a&gt;文件上传&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;4&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;5&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import requests&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;url &amp;#x3D; &amp;quot;http:&amp;#x2F;&amp;#x2F;httpbin.org&amp;#x2F;post&amp;quot;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;files &amp;#x3D; &amp;#123;&amp;#39;files&amp;#39;:open(&amp;quot;alipay.png&amp;quot;,&amp;#39;rb&amp;#39;)&amp;#125;&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;response &amp;#x3D; requests.post(url,files&amp;#x3D;files)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(response.text)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;</summary>
+    
+    
+    
+    <category term="python" scheme="https://www.yangkunpeng.top/categories/python/"/>
+    
+    
+    <category term="爬虫" scheme="https://www.yangkunpeng.top/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python3爬虫(五)--requests库的基本使用</title>
+    <link href="https://www.yangkunpeng.top/2019/dc79fa45.html"/>
+    <id>https://www.yangkunpeng.top/2019/dc79fa45.html</id>
+    <published>2019-06-04T16:13:10.000Z</published>
+    <updated>2020-11-14T13:21:50.027Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;前面几篇学习了，urllib的这个库，这个库用起来有点麻烦，发送请求，添加header等等，这篇来介绍下requests这个库，Requests是用python语言基于urllib编写的，采用的是Apache2 Licensed开源协议的HTTP库，Requests它会比urllib更加方便，可以节约我们大量的工作。&lt;/p&gt;
+&lt;h3 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h3&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;pip install requests&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;h3 id=&quot;例子&quot;&gt;&lt;a href=&quot;#例子&quot; class=&quot;headerlink&quot; title=&quot;例子&quot;&gt;&lt;/a&gt;例子&lt;/h3&gt;&lt;p&gt;先看一个简单的小例子，来看看requests的威力&lt;/p&gt;
+&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;3&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;import requests&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;r &amp;#x3D; requests.get(&amp;#39;http:www.baidu.com&amp;#39;)&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;print(r.text)&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+&lt;p&gt;这样就可以把百度的首页源码给抓 下来，对你没看错，就这几行代码。是不是比urllib方便多了。又方便又简单。&lt;br&gt;r是我们请求返回的一个response的一个对象&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="python" scheme="https://www.yangkunpeng.top/categories/python/"/>
+    
+    
+    <category term="爬虫" scheme="https://www.yangkunpeng.top/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Python3爬虫(四)--User Agent与代理IP</title>
+    <link href="https://www.yangkunpeng.top/2019/ac32d860.html"/>
+    <id>https://www.yangkunpeng.top/2019/ac32d860.html</id>
+    <published>2019-06-04T13:24:10.000Z</published>
+    <updated>2020-11-14T13:21:18.378Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;为什么要使用User-Agent&quot;&gt;&lt;a href=&quot;#为什么要使用User-Agent&quot; class=&quot;headerlink&quot; title=&quot;为什么要使用User Agent&quot;&gt;&lt;/a&gt;为什么要使用User Agent&lt;/h3&gt;&lt;p&gt;这个User Agent在系列文章第二篇中有简单的说过&lt;a href=&quot;http://t.cn/Ai9l4nDA&quot;&gt;python爬虫(二)-用urllib实现百度翻译&lt;/a&gt;，今天详细说明一下&lt;/p&gt;
+&lt;p&gt;很多网站不喜欢被爬虫程序访问，所以会设置关卡阻止爬虫程序的访问，如过对方服务器检查到访问者是爬虫程序，也就是非人为点击访问的，就不会让你继续访问。此时通过设置User Agent来达到隐藏身份的目的，User Agent简称UA。&lt;/p&gt;
+&lt;p&gt;User Agent储存在headers中，服务器通过检测headers中的User Agent来判断是谁在访问，在python中如果不设置User Agent它会有默认的值，那么这个User Agent会带有python的字样，如果检测到User Agent是python就不会在让你继续访问。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="python" scheme="https://www.yangkunpeng.top/categories/python/"/>
+    
+    
+    <category term="爬虫" scheme="https://www.yangkunpeng.top/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python爬虫(三)-urllib.error异常</title>
+    <link href="https://www.yangkunpeng.top/2019/6f6b0998.html"/>
+    <id>https://www.yangkunpeng.top/2019/6f6b0998.html</id>
+    <published>2019-06-03T06:09:10.000Z</published>
+    <updated>2020-11-14T13:20:50.994Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;urllib-error&quot;&gt;&lt;a href=&quot;#urllib-error&quot; class=&quot;headerlink&quot; title=&quot;urllib.error&quot;&gt;&lt;/a&gt;urllib.error&lt;/h3&gt;&lt;p&gt;urllib.error异常可以接收urllib.request尝试的异常,urllib.error有两个方法，URLError和HTTPError如下图所示：&lt;br&gt;&lt;img src=&quot;https://i.loli.net/2019/06/03/5cf4b01834b7660294.png&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="python" scheme="https://www.yangkunpeng.top/categories/python/"/>
+    
+    
+    <category term="爬虫" scheme="https://www.yangkunpeng.top/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python爬虫(二)-用urllib实现百度翻译</title>
+    <link href="https://www.yangkunpeng.top/2019/175951a3.html"/>
+    <id>https://www.yangkunpeng.top/2019/175951a3.html</id>
+    <published>2019-06-01T16:17:10.000Z</published>
+    <updated>2020-11-14T13:20:53.283Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;上一篇内容，已经学会了使用简单的语句对网页进行抓取。接下来，详细看下urlopen的两个重要参数url和data，学习如何发送数据data。我们想做一个百度翻译就需要向百度翻译的服务器发送我们想要翻译的内容。&lt;/p&gt;
+&lt;p&gt;上一篇我们说过 urllib有几个默认的参数，出了几个默认的参数外 出了url 这次我需要用到一个data&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h3 id=&quot;效果图&quot;&gt;&lt;a href=&quot;#效果图&quot; class=&quot;headerlink&quot; title=&quot;效果图&quot;&gt;&lt;/a&gt;效果图&lt;/h3&gt;&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2019/06/02/5cf2a35f6234d44513.gif&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="python" scheme="https://www.yangkunpeng.top/categories/python/"/>
+    
+    
+    <category term="爬虫" scheme="https://www.yangkunpeng.top/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python爬虫(一)-urllib的基本使用</title>
+    <link href="https://www.yangkunpeng.top/2019/794500f6.html"/>
+    <id>https://www.yangkunpeng.top/2019/794500f6.html</id>
+    <published>2019-05-31T16:00:10.000Z</published>
+    <updated>2020-11-14T13:20:49.243Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;python之所以强大主要是因为他有许多的开源库可以使用，爬虫的库就有很多，具体可以自行了解一下。&lt;/p&gt;
+&lt;p&gt;为了方便我们这次使用的IDE就是用sublime text 3 ，sublime text 3并不支持python程序，所以我们需要配置一下。具体配置教程请查看&lt;a href=&quot;https://www.jianshu.com/p/a401a0bfddf7&quot;&gt;sublime text 3 打造成python IDE 环境&lt;/a&gt; &lt;/p&gt;
+&lt;p&gt;学习python爬虫当少不了，python的一些基础。&lt;br&gt;可以在通过如下方式进行学习：&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;(1)廖雪峰Python3教程(文档)：&lt;/strong&gt;&lt;br&gt;这个也是我的入门教程&lt;br&gt;    URL：&lt;a href=&quot;http://www.liaoxuefeng.com/&quot;&gt;http://www.liaoxuefeng.com/&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="python" scheme="https://www.yangkunpeng.top/categories/python/"/>
+    
+    
+    <category term="爬虫" scheme="https://www.yangkunpeng.top/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python爬虫(零)--爬虫基础了解</title>
+    <link href="https://www.yangkunpeng.top/2019/d5fa4a03.html"/>
+    <id>https://www.yangkunpeng.top/2019/d5fa4a03.html</id>
+    <published>2019-05-30T13:52:10.000Z</published>
+    <updated>2020-11-14T13:22:12.483Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;之前玩过几个星期的爬虫，由于工作原因就没有去研究了荒废了大半年了，现在基本都忘干净了。最近想重新学习下爬虫，因为我觉得爬虫特别有意思，特别是想要批量下载东西时，写个小爬虫分分钟的事就可以弄到手了。现在是互联网时代，垃圾信息特多。想要快速找到并且获得自己想要的资源爬虫肯定不可少咯！！！&lt;/p&gt;
+&lt;p&gt;因此以后有时间的话，就会把自己学爬虫的过程记录下来，见证技术的成长！！！顺便分享，希望能帮到需要的人。&lt;/p&gt;
+&lt;h3 id=&quot;1-什么是爬虫&quot;&gt;&lt;a href=&quot;#1-什么是爬虫&quot; class=&quot;headerlink&quot; title=&quot;1. 什么是爬虫&quot;&gt;&lt;/a&gt;1. 什么是爬虫&lt;/h3&gt;&lt;p&gt;爬虫，即网络爬虫，大家可以理解为在网络上爬行的一直蜘蛛，互联网比作一张大网，二爬虫便是在这张网上派来爬去的蜘蛛咯，如果它遇到资源，那么它就会抓取下来。想抓什么？这个有你来控制它咯。&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="python" scheme="https://www.yangkunpeng.top/categories/python/"/>
+    
+    
+    <category term="爬虫" scheme="https://www.yangkunpeng.top/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>django  ImageField使用默认图片</title>
+    <link href="https://www.yangkunpeng.top/2019/f3abe4d6.html"/>
+    <id>https://www.yangkunpeng.top/2019/f3abe4d6.html</id>
+    <published>2019-05-19T15:44:10.000Z</published>
+    <updated>2020-11-14T13:15:38.626Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;修改&lt;code&gt;models.py&lt;/code&gt;：&lt;/p&gt;
+&lt;pre&gt;&lt;code&gt;img = models.ImageField(upload_to=&amp;#39;article_img&amp;#39;,default=&amp;quot;upimg/default.png&amp;quot;)&lt;/code&gt;&lt;/pre&gt;</summary>
+    
+    
+    
+    <category term="python" scheme="https://www.yangkunpeng.top/categories/python/"/>
+    
+    
+    <category term="django" scheme="https://www.yangkunpeng.top/tags/django/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js jQuery实现点击浏览器标签切换网页标题</title>
+    <link href="https://www.yangkunpeng.top/2019/2ec86465.html"/>
+    <id>https://www.yangkunpeng.top/2019/2ec86465.html</id>
+    <published>2019-05-19T15:44:10.000Z</published>
+    <updated>2020-11-14T13:16:11.707Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;strong&gt;效果图&lt;/strong&gt;：&lt;br&gt;&lt;img src=&quot;https://i.loli.net/2019/06/09/5cfc9e735b8cb54633.gif&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="前端" scheme="https://www.yangkunpeng.top/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="javascript" scheme="https://www.yangkunpeng.top/tags/javascript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>python爬虫实例(二)--爬取猫眼电影最受期待排行榜</title>
+    <link href="https://www.yangkunpeng.top/2019/ec8f6773.html"/>
+    <id>https://www.yangkunpeng.top/2019/ec8f6773.html</id>
+    <published>2019-05-19T15:34:10.000Z</published>
+    <updated>2020-11-21T10:52:13.902Z</updated>
+    
+    
+    <summary type="html">&lt;h3 id=&quot;前言&quot;&gt;&lt;a href=&quot;#前言&quot; class=&quot;headerlink&quot; title=&quot;前言&quot;&gt;&lt;/a&gt;前言&lt;/h3&gt;&lt;p&gt;这次使用的还是requests+beautifulsoup这两个库，方法也可之前 &lt;a href=&quot;http://t.cn/AiNB2OYu&quot;&gt;爬取酷狗TOP500音乐信息&lt;/a&gt;一样，分析链接，然后分析网页结构。抓取电影的  排名，片名，上映时间，主演&lt;/p&gt;
+&lt;h3 id=&quot;分析链接&quot;&gt;&lt;a href=&quot;#分析链接&quot; class=&quot;headerlink&quot; title=&quot;分析链接&quot;&gt;&lt;/a&gt;分析链接&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://maoyan.com/board/6&quot;&gt;https://maoyan.com/board/6&lt;/a&gt; 这个链接就是猫眼最受期待电影排行榜，这个跟酷狗不一样这个有翻页，可以很快的观察出每一的链接，一共5页。&lt;/p&gt;
+&lt;p&gt;我们可以先点击第二页观察连接：&lt;a href=&quot;https://maoyan.com/board/6?offset=10&quot;&gt;https://maoyan.com/board/6?offset=10&lt;/a&gt;    ，发现多了一个 ?offset=10 我们继续点击第三页观察链接：&lt;a href=&quot;https://maoyan.com/board/6?offset=20&quot;&gt;https://maoyan.com/board/6?offset=20&lt;/a&gt;     ，发现链接的?offset=10变成的?offset=20&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="python" scheme="https://www.yangkunpeng.top/categories/python/"/>
+    
+    
+    <category term="爬虫" scheme="https://www.yangkunpeng.top/tags/%E7%88%AC%E8%99%AB/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>js jQuery点击网页出现会飘的文字</title>
+    <link href="https://www.yangkunpeng.top/2019/8516ffa3.html"/>
+    <id>https://www.yangkunpeng.top/2019/8516ffa3.html</id>
+    <published>2019-05-19T14:44:10.000Z</published>
+    <updated>2020-11-18T12:36:25.834Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;效果图&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://i.loli.net/2019/06/09/5cfc9e8d8c2b231467.gif&quot;&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="前端" scheme="https://www.yangkunpeng.top/categories/%E5%89%8D%E7%AB%AF/"/>
+    
+    
+    <category term="javascript" scheme="https://www.yangkunpeng.top/tags/javascript/"/>
+    
+  </entry>
+  
+</feed>

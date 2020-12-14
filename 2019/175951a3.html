@@ -1,0 +1,339 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width,initial-scale=1"><title>python爬虫(二)-用urllib实现百度翻译 | Peng's Blog</title><meta name="keywords" content="爬虫"><meta name="author" content="Yang"><meta name="copyright" content="Yang"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta http-equiv="Cache-Control" content="no-transform"><meta http-equiv="Cache-Control" content="no-siteapp"><meta name="description" content="前言上一篇内容，已经学会了使用简单的语句对网页进行抓取。接下来，详细看下urlopen的两个重要参数url和data，学习如何发送数据data。我们想做一个百度翻译就需要向百度翻译的服务器发送我们想要翻译的内容。 上一篇我们说过 urllib有几个默认的参数，出了几个默认的参数外 出了url 这次我需要用到一个data  urllib.request.urlopen(url, data&#x3D;None,">
+<meta property="og:type" content="article">
+<meta property="og:title" content="python爬虫(二)-用urllib实现百度翻译">
+<meta property="og:url" content="https://www.yangkunpeng.top/2019/175951a3.html">
+<meta property="og:site_name" content="Peng&#39;s Blog">
+<meta property="og:description" content="前言上一篇内容，已经学会了使用简单的语句对网页进行抓取。接下来，详细看下urlopen的两个重要参数url和data，学习如何发送数据data。我们想做一个百度翻译就需要向百度翻译的服务器发送我们想要翻译的内容。 上一篇我们说过 urllib有几个默认的参数，出了几个默认的参数外 出了url 这次我需要用到一个data  urllib.request.urlopen(url, data&#x3D;None,">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://i.loli.net/2020/11/14/E6ZaYCGIckQUMdn.png">
+<meta property="article:published_time" content="2019-06-01T16:17:10.000Z">
+<meta property="article:modified_time" content="2020-11-14T13:20:53.283Z">
+<meta property="article:author" content="Yang">
+<meta property="article:tag" content="爬虫">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.loli.net/2020/11/14/E6ZaYCGIckQUMdn.png"><link rel="shortcut icon" href="/img/favicon.ico"><link rel="canonical" href="https://www.yangkunpeng.top/2019/175951a3"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//www.google-analytics.com" crossorigin="crossorigin"/><link rel="preconnect" href="//hm.baidu.com"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="preconnect" href="//zz.bdstatic.com"/><meta name="baidu-site-verification" content="code-X1ZfiwcvRM"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/fancybox@latest/dist/jquery.fancybox.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.css"><script>var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?812d3bbdd74610181745ac2476e809f1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script><script async="async" src="https://www.googletagmanager.com/gtag/js?id=zmlZw0E_GBM5XG28oEbINgVrGoDoL-Ek5h7PHQZGlXM"></script><script>window.dataLayer = window.dataLayer || [];
+function gtag(){dataLayer.push(arguments);}
+gtag('js', new Date());
+gtag('config', 'zmlZw0E_GBM5XG28oEbINgVrGoDoL-Ek5h7PHQZGlXM');
+</script><script>var GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: {"defaultEncoding":2,"translateDelay":0,"msgToTraditionalChinese":"繁","msgToSimplifiedChinese":"簡"},
+  noticeOutdate: {"limitDay":500,"position":"top","messagePrev":"文章距离上次更已有","messageNext":"天，其中的内容可能已经过时。"},
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: Yang","link":"链接: ","source":"来源: Peng's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  ClickShowText: undefined,
+  lightbox: 'mediumZoom',
+  Snackbar: {"chs_to_cht":"你已切换为繁体","cht_to_chs":"你已切换为简体","day_to_night":"你已切换为深色模式","night_to_day":"你已切换为浅色模式","bgLight":"#49b1f5","bgDark":"#121212","position":"top-center"},
+  justifiedGallery: {
+    js: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/js/jquery.justifiedGallery.min.js',
+    css: 'https://cdn.jsdelivr.net/npm/justifiedGallery/dist/css/justifiedGallery.min.css'
+  },
+  isPhotoFigcaption: false,
+  islazyload: true,
+  isanchor: false
+};
+
+var saveToLocal = {
+  set: function setWithExpiry(key, value, ttl) {
+    const now = new Date()
+    const expiryDay = ttl * 86400000
+    const item = {
+      value: value,
+      expiry: now.getTime() + expiryDay,
+    }
+    localStorage.setItem(key, JSON.stringify(item))
+  },
+
+  get: function getWithExpiry(key) {
+    const itemStr = localStorage.getItem(key)
+
+    if (!itemStr) {
+      return undefined
+    }
+    const item = JSON.parse(itemStr)
+    const now = new Date()
+
+    if (now.getTime() > item.expiry) {
+      localStorage.removeItem(key)
+      return undefined
+    }
+    return item.value
+  }
+}</script><script id="config_change">var GLOBAL_CONFIG_SITE = { 
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: true,
+  isToc: true,
+  postUpdate: '2020-11-14 21:20:53'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(function () {  window.activateDarkMode = function () {
+    document.documentElement.setAttribute('data-theme', 'dark')
+    if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+    }
+  }
+  window.activateLightMode = function () {
+    document.documentElement.setAttribute('data-theme', 'light')
+   if (document.querySelector('meta[name="theme-color"]') !== null) {
+      document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+    }
+  }
+  const autoChangeMode = 'false'
+  const t = saveToLocal.get('theme')
+  if (autoChangeMode === '1') {
+    const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+    const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+    const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+    const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+    if (t === undefined) {
+      if (isLightMode) activateLightMode()
+      else if (isDarkMode) activateDarkMode()
+      else if (isNotSpecified || hasNoSupport) {
+        const now = new Date()
+        const hour = now.getHours()
+        const isNight = hour <= 6 || hour >= 18
+        isNight ? activateDarkMode() : activateLightMode()
+      }
+      window.matchMedia('(prefers-color-scheme: dark)').addListener(function (e) {
+        if (saveToLocal.get('theme') === undefined) {
+          e.matches ? activateDarkMode() : activateLightMode()
+        }
+      })
+    } else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else if (autoChangeMode === '2') {
+    const now = new Date()
+    const hour = now.getHours()
+    const isNight = hour <= 6 || hour >= 18
+    if (t === undefined) isNight ? activateDarkMode() : activateLightMode()
+    else if (t === 'light') activateLightMode()
+    else activateDarkMode()
+  } else {
+    if (t === 'dark') activateDarkMode()
+    else if (t === 'light') activateLightMode()
+  }const asideStatus = saveToLocal.get('aside-status')
+if (asideStatus !== undefined) {
+   if (asideStatus === 'hide') {
+     document.documentElement.classList.add('hide-aside')
+   } else {
+     document.documentElement.classList.remove('hide-aside')
+   }
+}})()</script><meta name="shenma-site-verification" content="2ae8ef4fe04d1d720b5ede9541aed688_1606103594"><meta name="360-site-verification" content="0304d56208b132e5f13a05c303a89f42" /><meta name="sogou_site_verification" content="8EspEicNoZ"/><link rel="stylesheet" href="//at.alicdn.com/t/font_2204171_z160zzpghqc.css"/><link rel="stylesheet" href="/news/css/news.css"/><link rel="stylesheet" href="/clock/css/clock.css"/><link rel="stylesheet" href="/icon/css/icon.css"/><link rel="stylesheet" href="/css/aside.css"/><link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Zfour/Butterfly-double-row-display@1.00/cardlistpost.css"/><link rel="stylesheet" href="/swiper/swiper.min.css"><link rel="stylesheet" href="/swiper/swiperstyle.css"><meta name="generator" content="Hexo 5.2.0"><link rel="alternate" href="/atom.xml" title="Peng's Blog" type="application/atom+xml">
+</head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="author-avatar"><img class="avatar-img" data-lazy-src="https://i.loli.net/2020/11/12/wj7pdVmAfzDhKXQ.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="site-data"><div class="data-item is-center"><div class="data-item-link"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div></div><div class="data-item is-center"><div class="data-item-link"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive faa-float animated"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/Music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/images/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></li><li><a class="site-page" href="/bangumi/"><i class="fa-fw iconfont icon-dianshiji"></i><span> 追番</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div></div></div><div id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url(https://i.loli.net/2020/11/14/E6ZaYCGIckQUMdn.png)"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">Peng's Blog</a></span><span id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive faa-float animated"></i><span> 归档</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="javascript:void(0);" rel="external nofollow noreferrer"><i class="fa-fw fas fa-list"></i><span> 娱乐</span><i class="fas fa-chevron-down expand"></i></a><ul class="menus_item_child"><li><a class="site-page" href="/Music/"><i class="fa-fw fas fa-music"></i><span> 音乐</span></a></li><li><a class="site-page" href="/images/"><i class="fa-fw fas fa-image"></i><span> 图库</span></a></li><li><a class="site-page" href="/bangumi/"><i class="fa-fw iconfont icon-dianshiji"></i><span> 追番</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/shuoshuo/"><i class="fa-fw fas fa-comment"></i><span> 留言板</span></a></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> Link</span></a></div></div><span class="close" id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></span></span></nav><div id="post-info"><h1 class="post-title">python爬虫(二)-用urllib实现百度翻译</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2019-06-01T16:17:10.000Z" title="发表于 2019-06-02 00:17:10">2019-06-02</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2020-11-14T13:20:53.283Z" title="更新于 2020-11-14 21:20:53">2020-11-14</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/python/">python</a></span></div><div class="meta-secondline"> <span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.1k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>上一篇内容，已经学会了使用简单的语句对网页进行抓取。接下来，详细看下urlopen的两个重要参数url和data，学习如何发送数据data。我们想做一个百度翻译就需要向百度翻译的服务器发送我们想要翻译的内容。</p>
+<p>上一篇我们说过 urllib有几个默认的参数，出了几个默认的参数外 出了url 这次我需要用到一个data</p>
+<blockquote>
+<p>urllib.request.urlopen(url, data=None, [timeout, ]*, cafile=None, capath=None, cadefault=False, context=None)</p>
+</blockquote>
+<h3 id="效果图"><a href="#效果图" class="headerlink" title="效果图"></a>效果图</h3><p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/02/5cf2a35f6234d44513.gif"></p>
+<a id="more"></a>
+<h3 id="urlopen的url参数"><a href="#urlopen的url参数" class="headerlink" title="urlopen的url参数"></a>urlopen的url参数</h3><p> url不仅可以是一个字符串，例如:<a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.baidu.com/">http://www.baidu.com</a> url也可以是一个Request对象.</p>
+<p> urlopen()返回的对象，除了<code>read()</code>方法外，还有<code>geturl()</code>方法、<code>info()</code>方法、<code>getcode()</code>方法。、</p>
+<blockquote>
+<p><code>geturl()</code>：返回的是一个url的字符串；<br><code>info()</code>：返回的是一些meta标记的元信息，包括一些服务器的信息；<br><code>getcode()</code>：返回的是HTTP的状态码，如果返回200表示请求成功。</p>
+</blockquote>
+<h3 id="urlopen的data参数"><a href="#urlopen的data参数" class="headerlink" title="urlopen的data参数"></a>urlopen的data参数</h3><p>我们可以使用data向服务器发送数据，我们这篇要制作的百度翻译就通过data向百度翻译的服务器发送数据，然后或去百度翻译服务器返回的结果。最终将显示出来。<br>data参数有自己的格式，它是一个基于application/x-<a target="_blank" rel="noopener external nofollow noreferrer" href="http://www.form-urlencoded的格式,具体格式我们不用了解,/">www.form-urlencoded的格式，具体格式我们不用了解，</a> 因为我们可以使用urllib.parse.urlencode()函数将字符串自动转换成上面所说的格式。</p>
+<h3 id="制作百度翻译"><a href="#制作百度翻译" class="headerlink" title="制作百度翻译"></a>制作百度翻译</h3><p>首先使用 Chrome 浏览器打开 <a target="_blank" rel="noopener external nofollow noreferrer" href="https://fanyi.baidu.com/">百度翻译</a>，这里，我们选择 Chrome 浏览器自带的开发者工具对网站进行抓包分析<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/01/5cf29b69261f959885.png"></p>
+<h5 id="1-抓包分析"><a href="#1-抓包分析" class="headerlink" title="1. 抓包分析"></a>1. 抓包分析</h5><p>打开 Network 选项卡进行监控，并选择 XHR 作为 Filter 进行过滤</p>
+<p>然后，我们在输入框中输入待翻译的文字进行测试，可以看到如下图红色框中的内容</p>
+<p>我们主要分析 sug  但是下面有好多sug我们要查看哪一个呢，之所以有这么多sug是因为百度翻译默认开启的是实施翻译，也就是你输入一个字你在打拼音的是时候每按下一个字母他就会翻译一次，直到这个后我们就可以知道，最后一个sug就是我们完整的文字。<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/01/5cf29d16beffb10286.png"><br>我们可以验证一下 点击最下面的那个sug，我们可以看到下图红色框框的内容就是我们请求的URL。</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/01/5cf29e8be3eda32405.png"><br>滚到最下面我们可以看到我们输入的翻译内容  “你好”，这个For Data就是发送到百度翻译服务器的内容，然后服务器会返回对应的翻译给带浏览器，最后显示在浏览器上给我们看。<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/01/5cf29f0ce583975949.png"></p>
+<p>我们还可看到一个 request Headers 中有一个：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">user-agent: Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;74.0.3729.131 Safari&#x2F;537.36</span><br></pre></td></tr></table></figure>
+<p>这个user-agent的意思是告诉服务器我使用谷歌浏览器访问的，有些网站会有反爬虫，如果发现你是爬虫访问的就会阻止你，我们只要加上这个user-agent就可以让服务器以为我们是用户通过浏览器访问的<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/01/5cf29fd536d1f79229.png"><br>记住上面三个数据，下面我们就要用到。<br>直接上完整代码</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">import urllib.request</span><br><span class="line">import urllib.parse</span><br><span class="line">import json</span><br><span class="line"># 请求的网址</span><br><span class="line">Request_URL &#x3D; &quot;https:&#x2F;&#x2F;fanyi.baidu.com&#x2F;sug&quot;</span><br><span class="line">while True:</span><br><span class="line">    text &#x3D; input(&quot;翻译内容&quot;)</span><br><span class="line">    #表单数据（需要翻译的内容）</span><br><span class="line">    Form_Data &#x3D; &#123;</span><br><span class="line">            &quot;kw&quot;: text</span><br><span class="line">        &#125;</span><br><span class="line">    #创建一个User-Agent</span><br><span class="line">    head &#x3D; &#123;&quot;User-Agent&quot;:&quot;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;74.0.3729.131 Safari&#x2F;537.36&quot;&#125;</span><br><span class="line">   #使用urlencode方法转换标准格式</span><br><span class="line">    data &#x3D; urllib.parse.urlencode(Form_Data).encode(&#39;utf-8&#39;)</span><br><span class="line">    # 构造请求对象</span><br><span class="line">    req &#x3D; urllib.request.Request(Request_URL,data,head)</span><br><span class="line">	# 发送请求，获得响应</span><br><span class="line">    req &#x3D; urllib.request.urlopen(req)</span><br><span class="line">	# 获取服务器响应数据</span><br><span class="line">    req_data &#x3D; req.read().decode(&quot;utf-8&quot;)</span><br><span class="line">    #使用json解析数据</span><br><span class="line">    html &#x3D; json.loads(req_data)</span><br><span class="line">	#找到想要的结果</span><br><span class="line">    results &#x3D; html[&#39;data&#39;][0][&#39;v&#39;]</span><br><span class="line">    #打印结果</span><br><span class="line">    print(results)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<h3 id="最终效果"><a href="#最终效果" class="headerlink" title="最终效果"></a>最终效果</h3><p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/02/5cf2a35f6234d44513.gif"><br>如果还想要具体一点的结果可以使用 正则或者 <code>split()</code>方法 这里就不详细说明了。</p>
+<h3 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h3><p>如果还想增加一点难度，可以试一试<a target="_blank" rel="noopener external nofollow noreferrer" href="http://fanyi.youdao.com/">有道翻译</a> 方法类似，有兴趣的话可以自己尝试一下。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="mailto:undefined" rel="external nofollow noreferrer">Yang</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="https://www.yangkunpeng.top/2019/175951a3.html">https://www.yangkunpeng.top/2019/175951a3.html</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" rel="external nofollow noreferrer" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://www.yangkunpeng.top" target="_blank">Peng's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E7%88%AC%E8%99%AB/">爬虫</a></div><div class="post_share"><div class="social-share" data-image="https://i.loli.net/2020/11/14/E6ZaYCGIckQUMdn.png" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/social-share.js/dist/css/share.min.css"><script src="https://cdn.jsdelivr.net/npm/social-share.js/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2019/6f6b0998.html"><img class="prev-cover" data-lazy-src="https://i.loli.net/2020/11/14/E6ZaYCGIckQUMdn.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">python爬虫(三)-urllib.error异常</div></div></a></div><div class="next-post pull-right"><a href="/2019/794500f6.html"><img class="next-cover" data-lazy-src="https://i.loli.net/2020/11/14/E6ZaYCGIckQUMdn.png" onerror="onerror=null;src='/img/404.jpg'"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">python爬虫(一)-urllib的基本使用</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span> 相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2019/ac32d860.html" title="Python3爬虫(四)--User Agent与代理IP"><img class="cover" data-lazy-src="https://i.loli.net/2020/11/14/E6ZaYCGIckQUMdn.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-06-04</div><div class="title">Python3爬虫(四)--User Agent与代理IP</div></div></a></div><div><a href="/2019/d5fa4a03.html" title="python爬虫(零)--爬虫基础了解"><img class="cover" data-lazy-src="https://i.loli.net/2020/11/14/E6ZaYCGIckQUMdn.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-05-30</div><div class="title">python爬虫(零)--爬虫基础了解</div></div></a></div><div><a href="/2019/f0ba7350.html" title="python3爬虫(八)--BeautifulSoup4的基本使用"><img class="cover" data-lazy-src="https://i.loli.net/2020/11/14/E6ZaYCGIckQUMdn.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-06-08</div><div class="title">python3爬虫(八)--BeautifulSoup4的基本使用</div></div></a></div><div><a href="/2019/19723458.html" title="Python3爬虫(六)--requests的高级操作"><img class="cover" data-lazy-src="https://i.loli.net/2020/11/14/E6ZaYCGIckQUMdn.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-06-06</div><div class="title">Python3爬虫(六)--requests的高级操作</div></div></a></div><div><a href="/2019/22f91623.html" title="python3爬虫(七)--了解Beautiful Soup 4"><img class="cover" data-lazy-src="https://i.loli.net/2020/11/14/E6ZaYCGIckQUMdn.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-06-07</div><div class="title">python3爬虫(七)--了解Beautiful Soup 4</div></div></a></div><div><a href="/2019/3921d68a.html" title="python3爬虫实例(一)--爬取酷狗TOP500的音乐信息"><img class="cover" data-lazy-src="https://i.loli.net/2020/11/14/E6ZaYCGIckQUMdn.png" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2019-05-17</div><div class="title">python3爬虫实例(一)--爬取酷狗TOP500的音乐信息</div></div></a></div></div></div><hr/><div id="post-comment"><div class="comment-head"><div class="comment-headline"><i class="fas fa-comments fa-fw"></i><span> 评论</span></div></div><div class="comment-wrap"><div><div class="vcomment" id="vcomment"></div></div></div></div></div><div class="aside_content" id="aside_content"><div class="card-widget card-info"><div class="card-content"><div class="card-info-avatar is-center"><img class="avatar-img" data-lazy-src="https://i.loli.net/2020/11/12/wj7pdVmAfzDhKXQ.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/><div class="author-info__name">Yang</div><div class="author-info__description">Today is not easy</div></div><div class="card-info-data"><div class="card-info-data-item is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">33</div></a></div><div class="card-info-data-item is-center"><a href="/tags/"><div class="headline">标签</div><div class="length-num">10</div></a></div><div class="card-info-data-item is-center"><a href="/categories/"><div class="headline">分类</div><div class="length-num">7</div></a></div></div><a class="button--animated" id="card-info-btn" href="JavaScript:addBookmark()" rel="external nofollow noreferrer"><i class="iconfont icon-icon_favorite"></i><span>收藏我的博客</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/ykpkp" rel="external nofollow noreferrer" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="https://space.bilibili.com/9120863" rel="external nofollow noreferrer" target="_blank" title="Bilibili"><i class="fab iconfont icon-bilibili-line"></i></a><a class="social-icon" href="https://music.163.com/#/user/home?id=100570227" rel="external nofollow noreferrer" target="_blank" title="网易云"><i class="fab iconfont icon-wangyiyunyinyuemusic1193417easyiconnet"></i></a><a class="social-icon" href="https://www.yangkunpeng.top/atom.xml" target="_blank" title="RSS订阅"><i class="fab iconfont icon-rss"></i></a><a class="social-icon" href="https://blog.csdn.net/qq_16601517" rel="external nofollow noreferrer" target="_blank" title="CSDN"><i class="fab iconfont icon-CN_csdnnet"></i></a></div></div></div><div class="card-widget card-announcement"><div class="card-content"><div class="item-headline"><i class="fas fa-bullhorn card-announcement-animation"></i><span>公告</span></div><div class="announcement_content">This is my Blog</div></div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="card-content"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%89%8D%E8%A8%80"><span class="toc-number">1.</span> <span class="toc-text">前言</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%95%88%E6%9E%9C%E5%9B%BE"><span class="toc-number">2.</span> <span class="toc-text">效果图</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#urlopen%E7%9A%84url%E5%8F%82%E6%95%B0"><span class="toc-number">3.</span> <span class="toc-text">urlopen的url参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#urlopen%E7%9A%84data%E5%8F%82%E6%95%B0"><span class="toc-number">4.</span> <span class="toc-text">urlopen的data参数</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E5%88%B6%E4%BD%9C%E7%99%BE%E5%BA%A6%E7%BF%BB%E8%AF%91"><span class="toc-number">5.</span> <span class="toc-text">制作百度翻译</span></a><ol class="toc-child"><li class="toc-item toc-level-5"><a class="toc-link" href="#1-%E6%8A%93%E5%8C%85%E5%88%86%E6%9E%90"><span class="toc-number">5.0.1.</span> <span class="toc-text">1. 抓包分析</span></a></li></ol></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E6%9C%80%E7%BB%88%E6%95%88%E6%9E%9C"><span class="toc-number">6.</span> <span class="toc-text">最终效果</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#%E7%BB%93%E8%AF%AD"><span class="toc-number">7.</span> <span class="toc-text">结语</span></a></li></ol></div></div></div><div class="card-widget card-recent-post"><div class="card-content"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2020/e23bce6.html" title="SpringMVCHelloWorld"><img data-lazy-src="https://i.loli.net/2020/11/22/giG9mXWb1aqeDdN.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="SpringMVCHelloWorld"/></a><div class="content"><a class="title" href="/2020/e23bce6.html" title="SpringMVCHelloWorld">SpringMVCHelloWorld</a><time datetime="2020-11-22T11:22:34.000Z" title="发表于 2020-11-22 19:22:34">2020-11-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/e6d89b39.html" title="struts2入门例子登录demo"><img data-lazy-src="https://i.loli.net/2020/11/22/rqx3tEAFLCNGzR9.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="struts2入门例子登录demo"/></a><div class="content"><a class="title" href="/2020/e6d89b39.html" title="struts2入门例子登录demo">struts2入门例子登录demo</a><time datetime="2020-11-22T11:10:37.000Z" title="发表于 2020-11-22 19:10:37">2020-11-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/bfdf68bf.html" title="mysql 8.0.12压缩包解压后找不到data文件夹解决办法"><img data-lazy-src="https://i.loli.net/2020/11/22/fxiTrJY9UOV7RDm.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="mysql 8.0.12压缩包解压后找不到data文件夹解决办法"/></a><div class="content"><a class="title" href="/2020/bfdf68bf.html" title="mysql 8.0.12压缩包解压后找不到data文件夹解决办法">mysql 8.0.12压缩包解压后找不到data文件夹解决办法</a><time datetime="2020-11-22T10:49:51.000Z" title="发表于 2020-11-22 18:49:51">2020-11-22</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/abb6c0d3.html" title="git pull成功本地代码没更新"><img data-lazy-src="https://i.loli.net/2020/11/14/YTKVpCyaJigsDz1.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="git pull成功本地代码没更新"/></a><div class="content"><a class="title" href="/2020/abb6c0d3.html" title="git pull成功本地代码没更新">git pull成功本地代码没更新</a><time datetime="2020-11-14T11:03:48.000Z" title="发表于 2020-11-14 19:03:48">2020-11-14</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2020/42291650.html" title="面向对象之封装"><img data-lazy-src="https://i.loli.net/2020/11/22/9yVaRZDGSL8Ap2U.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面向对象之封装"/></a><div class="content"><a class="title" href="/2020/42291650.html" title="面向对象之封装">面向对象之封装</a><time datetime="2020-07-15T08:44:10.000Z" title="发表于 2020-07-15 16:44:10">2020-07-15</time></div></div></div></div></div></div></div></main><footer id="footer" style="background: rgba(30,144,255,0)"><div id="footer-wrap"><div class="copyright">&copy;2020 By Yang</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener external nofollow noreferrer" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="translateLink" type="button" title="简繁转换">繁</button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><a id="to_comment" href="#post-comment" title="直达评论"><i class="fas fa-comments"></i></a><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="https://cdn.jsdelivr.net/npm/jquery@latest/dist/jquery.min.js"></script><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="/js/tw_cn.js"></script><script src="https://cdn.jsdelivr.net/npm/medium-zoom/dist/medium-zoom.min.js"></script><script src="https://cdn.jsdelivr.net/npm/instant.page/instantpage.min.js" type="module" defer></script><script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload/dist/lazyload.iife.min.js"></script><script src="https://cdn.jsdelivr.net/npm/node-snackbar/dist/snackbar.min.js"></script><script>function panguFn () {
+  if (typeof pangu === 'object') pangu.spacingElementById('content-inner')
+  else {
+    $.getScript('https://cdn.jsdelivr.net/npm/pangu/dist/browser/pangu.min.js', () => {
+      pangu.spacingElementById('content-inner')
+    })
+  }
+}
+
+function panguInit () {
+  if (false){
+    GLOBAL_CONFIG_SITE.isPost && panguFn()
+  } else {
+    panguFn()
+  }
+}
+
+document.addEventListener('DOMContentLoaded', panguFn)</script><script>var preloader = {
+  endLoading: () => {
+    document.body.style.overflow = 'auto';
+    document.getElementById('loading-box').classList.add("loaded")
+  },
+  initLoading: () => {
+    document.body.style.overflow = '';
+    document.getElementById('loading-box').classList.remove("loaded")
+
+  }
+}
+window.addEventListener('load',()=> {preloader.endLoading()})</script><div class="js-pjax"><script>function loadValine () {
+  function initValine () {
+    let initData = {
+      el: '#vcomment',
+      appId: '4zbPdXScGjJ8NVVSwmiGcAGM-MdYXbMMI',
+      appKey: 'xWEg1HrYYVzCQwPELsFuLgwO',
+      master: '1fbf13fbea29c6b2d2d499dcd6750fef',
+      friends: '2aac3aef99a90809a1d550bdefbd34c4,70fdbfbf61ba8f816d2be29792703989',
+      placeholder: '1.建议填写QQ邮箱，评论头像采用QQ头像\n2.评论支持Markdown语法',
+      avatar: 'monsterid',
+      meta: 'nick,mail,link'.split(','),
+      pageSize: '10',
+      lang: 'zh-CN',
+      recordIP: false,
+      serverURLs: '',
+      emojiCDN: '',
+      emojiMaps: "",
+      enableQQ: false,
+      path: window.location.pathname,
+      
+
+    }
+
+    if (true) { 
+      initData.requiredFields= ('nick,mail'.split(','))
+    }
+    
+    if (false) {
+      const otherData = false
+      initData = Object.assign({}, initData, otherData)
+    }
+    
+    const valine = new Valine(initData)
+  }
+
+  if (typeof Valine === 'function') initValine() 
+  else $.getScript('https://cdn.jsdelivr.net/gh/lete114/CDN2/js/Valine-Lete3.2.js', initValine)
+}
+
+if ('Valine' === 'Valine' || !false) {
+  if (false) btf.loadComment(document.querySelector('#vcomment'),loadValine)
+  else setTimeout(() => loadValine(), 0)
+} else {
+  function loadOtherComment () {
+    loadValine()
+  }
+}</script><script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><script src="https://cdn.jsdelivr.net/npm/vue@2.6.11"></script><script src="/js/history.js"></script><script src="/js/historyroll.js"></script><script src="/news/js/keys.js"></script><script src="/js/piao.js"></script><script src="/js/MengTitle.js"></script><script src="/swiper/swiper.min.js"></script><script src="/swiper/swiperindex.js"></script><div class="aplayer no-destroy" data-id="1403501535" data-server="netease" data-type="song" data-fixed="true" data-mini="true" data-listFolded="false" data-order="random" data-preload="none" data-autoplay="true" muted></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1/dist/fireworks.min.js"></script><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.css"><script src="https://cdn.jsdelivr.net/npm/aplayer/dist/APlayer.min.js"></script><script src="https://cdn.jsdelivr.net/gh/metowolf/MetingJS@1.2/dist/Meting.min.js"></script><script src="https://cdn.jsdelivr.net/npm/pjax/pjax.min.js"></script><script>let pjaxSelectors = [
+  'title',
+  '#config_change',
+  '#body-wrap',
+  '#rightside-config-hide',
+  '#rightside-config-show',
+  '.js-pjax'
+]
+
+if (false) {
+  pjaxSelectors.unshift('meta[property="og:image"]', 'meta[property="og:title"]', 'meta[property="og:url"]')
+}
+
+var pjax = new Pjax({
+  elements: 'a:not([target="_blank"])',
+  selectors: pjaxSelectors,
+  cacheBust: false,
+  analytics: true,
+  scrollRestoration: false
+})
+
+document.addEventListener('pjax:complete', function () {
+  window.refreshFn()
+
+  $('script[data-pjax]').each(function () {
+    $(this).parent().append($(this).remove())
+  })
+
+  GLOBAL_CONFIG.islazyload && window.lazyLoadInstance.update()
+
+  typeof chatBtnFn === 'function' && chatBtnFn()
+  typeof panguInit === 'function' && panguInit()
+
+  if (typeof gtag === 'function') {
+    gtag('config', 'zmlZw0E_GBM5XG28oEbINgVrGoDoL-Ek5h7PHQZGlXM', {'page_path': window.location.pathname});
+  }
+
+  typeof loadMeting === 'function' && document.getElementsByClassName('aplayer').length && loadMeting()
+
+  // Analytics
+  if (false) {
+    MtaH5.pgv()
+  }
+
+  // prismjs
+  typeof Prism === 'object' && Prism.highlightAll()
+
+  typeof preloader === 'object' && preloader.endLoading()
+})
+
+
+document.addEventListener('pjax:send', function () {
+  typeof preloader === 'object' && preloader.initLoading()
+  
+  if (window.aplayers) {
+    for (let i = 0; i < window.aplayers.length; i++) {
+      if (!window.aplayers[i].options.fixed) {
+        window.aplayers[i].destroy()
+      }
+    }
+  }
+
+  typeof typed === 'object' && typed.destroy()
+
+  $(window).off('scroll')
+
+  //reset readmode
+  $('body').hasClass('read-mode') && $('body').removeClass('read-mode')
+
+})</script><script>(function(){
+  const bp = document.createElement('script');
+  const curProtocol = window.location.protocol.split(':')[0];
+  if (curProtocol === 'https'){
+  bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+  }
+  else{
+  bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+  }
+  bp.dataset.pjax = ''
+  const s = document.getElementsByTagName("script")[0];
+  s.parentNode.insertBefore(bp, s);
+})()</script></div></body></html>
