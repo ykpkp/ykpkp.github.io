@@ -1,67 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>7段显示器 分别显示0-9数字</title>
-    <url>/2019/6c5e986f.html</url>
-    <content><![CDATA[<p> <em>在使用7段显示器前我们需要找到公共共阴和公共共阳首先，我们找个电源（3到5伏）和1个1K（几百的也欧的也行）的电阻， VCC串接个电阻后和GND接在任意2个脚上，组合有很多，但总有一个LED会发光的找到一个就够了，，然后用GND不动，VCC（串电阻）逐个碰剩下的脚，如果有多个LED（一般是8个），那它就是共阴的了。相反用VCC不动，GND逐个碰剩下的脚，如果有多个LED（一般是8个），那它就是共阳的了。</em></p>
-<a id="more"></a>
-<p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2020/11/14/PrKAxd1BI8t9X4s.png"></p>
-<p>代码：</p>
-<pre><code>int i=0;
-int j=0;
-int k=0;
-
-void setup()
-&#123;
-  for(i=3;i&lt;=10;i++)
-  &#123;
-    pinMode(i,OUTPUT);
-  &#125;
-  for(i=3;i&lt;=10;i++)
-  &#123;
-    digitalWrite(i,HIGH);
-  &#125;
-&#125;
-
-void loop()
-&#123;
-  int num[10][7]=&#123;
-    &#123;3,4,6,7,8,9&#125;,
-    &#123;8,9&#125;,
-    &#123;3,5,6,7,8&#125;,
-    &#123;3,5,7,8,9&#125;,
-    &#123;4,5,8,9&#125;,
-    &#123;3,4,5,7,9&#125;,
-    &#123;3,4,5,6,7,9&#125;,
-    &#123;3,8,9&#125;,
-    &#123;3,4,5,6,7,8,9&#125;,
-    &#123;3,4,5,7,8,9&#125;
-  &#125;;
-  for(i=0;i&lt;10;i++)
-  &#123;
-    for(j=0;j&lt;7;j++)
-    &#123;
-      digitalWrite(num[i][j],LOW); 
-    &#125;
-    delay(500);
-    for(k=3;k&lt;=9;k++)
-    &#123;
-      digitalWrite(k,HIGH);
-    &#125;
-    delay(500);
-  &#125;
-&#125;</code></pre>
-<p>引脚图：</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2020/11/14/ZxA6ftvBEJkHmcg.png"></p>
-]]></content>
-      <categories>
-        <category>硬件</category>
-      </categories>
-      <tags>
-        <tag>Arduino</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>8X8的 LED灯显示 各种形状</title>
     <url>/2019/de2bfe18.html</url>
     <content><![CDATA[<p><strong>接线图：</strong></p>
@@ -155,6 +94,67 @@ void loop() &#123;  // put your main code here, to run repeatedly://    myDispla
       </tags>
   </entry>
   <entry>
+    <title>7段显示器 分别显示0-9数字</title>
+    <url>/2019/6c5e986f.html</url>
+    <content><![CDATA[<p> <em>在使用7段显示器前我们需要找到公共共阴和公共共阳首先，我们找个电源（3到5伏）和1个1K（几百的也欧的也行）的电阻， VCC串接个电阻后和GND接在任意2个脚上，组合有很多，但总有一个LED会发光的找到一个就够了，，然后用GND不动，VCC（串电阻）逐个碰剩下的脚，如果有多个LED（一般是8个），那它就是共阴的了。相反用VCC不动，GND逐个碰剩下的脚，如果有多个LED（一般是8个），那它就是共阳的了。</em></p>
+<a id="more"></a>
+<p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2020/11/14/PrKAxd1BI8t9X4s.png"></p>
+<p>代码：</p>
+<pre><code>int i=0;
+int j=0;
+int k=0;
+
+void setup()
+&#123;
+  for(i=3;i&lt;=10;i++)
+  &#123;
+    pinMode(i,OUTPUT);
+  &#125;
+  for(i=3;i&lt;=10;i++)
+  &#123;
+    digitalWrite(i,HIGH);
+  &#125;
+&#125;
+
+void loop()
+&#123;
+  int num[10][7]=&#123;
+    &#123;3,4,6,7,8,9&#125;,
+    &#123;8,9&#125;,
+    &#123;3,5,6,7,8&#125;,
+    &#123;3,5,7,8,9&#125;,
+    &#123;4,5,8,9&#125;,
+    &#123;3,4,5,7,9&#125;,
+    &#123;3,4,5,6,7,9&#125;,
+    &#123;3,8,9&#125;,
+    &#123;3,4,5,6,7,8,9&#125;,
+    &#123;3,4,5,7,8,9&#125;
+  &#125;;
+  for(i=0;i&lt;10;i++)
+  &#123;
+    for(j=0;j&lt;7;j++)
+    &#123;
+      digitalWrite(num[i][j],LOW); 
+    &#125;
+    delay(500);
+    for(k=3;k&lt;=9;k++)
+    &#123;
+      digitalWrite(k,HIGH);
+    &#125;
+    delay(500);
+  &#125;
+&#125;</code></pre>
+<p>引脚图：</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2020/11/14/ZxA6ftvBEJkHmcg.png"></p>
+]]></content>
+      <categories>
+        <category>硬件</category>
+      </categories>
+      <tags>
+        <tag>Arduino</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Arduino控制PS2无线手柄</title>
     <url>/2019/ba21a5d1.html</url>
     <content><![CDATA[<h4 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h4><p>   使用的是开源社区贡献的arduino PS2X库市面上也有不少PS2手柄，但是长得和PS2原装手柄有区别，这种手柄可以在PS2主机上使用，不一定可以配合此库使用，这也是因为这个库是逆向破解PS2协议的原因，所以肯定有哪里不太完美。</p>
@@ -180,6 +180,30 @@ void loop() &#123;  // put your main code here, to run repeatedly://    myDispla
       <tags>
         <tag>Arduino</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>Centos7 中yum命令无法执行</title>
+    <url>/2019/bdebabc9.html</url>
+    <content><![CDATA[<p>报错：</p>
+<pre><code>**/usr/bin/yum: line 3: import: command not found
+
+/usr/bin/yum: line 4: try:: command not found
+
+/usr/bin/yum: line 5: import: command not found
+
+/usr/bin/yum: line 6: except: command not found
+
+/usr/bin/yum: line 24: syntax error near unexpected token `(&#39;
+
+/usr/bin/yum: line 24: `&quot;&quot;&quot; % (sys.exc_value, sys.version)&#39;**</code></pre>
+<a id="more"></a>
+<p>原因：升级python3导致</p>
+<p>解决方式：</p>
+<pre><code>修改文件/usr/bin/yum、头中相应python为#!/usr/bin/python2.7</code></pre>
+]]></content>
+      <categories>
+        <category>centos7</category>
+      </categories>
   </entry>
   <entry>
     <title>CentOS7下部署Django项目详细操作步骤</title>
@@ -342,98 +366,6 @@ python manage.py collectstatic
       </tags>
   </entry>
   <entry>
-    <title>Centos7 中yum命令无法执行</title>
-    <url>/2019/bdebabc9.html</url>
-    <content><![CDATA[<p>报错：</p>
-<pre><code>**/usr/bin/yum: line 3: import: command not found
-
-/usr/bin/yum: line 4: try:: command not found
-
-/usr/bin/yum: line 5: import: command not found
-
-/usr/bin/yum: line 6: except: command not found
-
-/usr/bin/yum: line 24: syntax error near unexpected token `(&#39;
-
-/usr/bin/yum: line 24: `&quot;&quot;&quot; % (sys.exc_value, sys.version)&#39;**</code></pre>
-<a id="more"></a>
-<p>原因：升级python3导致</p>
-<p>解决方式：</p>
-<pre><code>修改文件/usr/bin/yum、头中相应python为#!/usr/bin/python2.7</code></pre>
-]]></content>
-      <categories>
-        <category>centos7</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>面向对象之封装</title>
-    <url>/2020/42291650.html</url>
-    <content><![CDATA[<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><ul>
-<li>面向对象编程（OOP - Object Oriented Programing）</li>
-</ul>
-<h2 id="面向过程与面向对象的区别"><a href="#面向过程与面向对象的区别" class="headerlink" title="面向过程与面向对象的区别"></a>面向过程与面向对象的区别</h2><ul>
-<li>面向过程与面向对象都是我们编程中编写程序的一种思维方式</li>
-<li>面向过程的程序设计方式，是遇到一件事时，思考”我该怎么做”，然后一步步实现的过程</li>
-<li>面向对象的程序设计方式，是遇到一件事时，思考”我该让谁来做”，然后那个”谁”就是对象</li>
-</ul>
-<h2 id="使用面向对象的好处"><a href="#使用面向对象的好处" class="headerlink" title="使用面向对象的好处"></a>使用面向对象的好处</h2><ul>
-<li>面向对象思维方式是一种更加符合人们思考习惯的思想</li>
-<li>面向对象中更多体现的是指挥着(指挥对象做事情)</li>
-<li>面向对象思维方式将复杂的问题简单化</li>
-</ul>
-<h2 id="面向对象举例"><a href="#面向对象举例" class="headerlink" title="面向对象举例"></a>面向对象举例</h2><ul>
-<li><p>超市</p>
-<ul>
-<li>客户<ul>
-<li>姓名：小龙女</li>
-<li>身高：160cm</li>
-<li>身高：60kg</li>
-<li>操作：购物</li>
-</ul>
-</li>
-<li>收银员<ul>
-<li>姓名：啊明</li>
-<li>部门：财务部</li>
-<li>员工编号：00001</li>
-<li>操作：收银、打印账单、刷卡</li>
-</ul>
-</li>
-</ul>
-</li>
-<li><p>汽车</p>
-</li>
-</ul>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Car &#123;</span><br><span class="line">	&#x2F;&#x2F; 颜色</span><br><span class="line">	String color;</span><br><span class="line">	&#x2F;&#x2F; 轮胎个数</span><br><span class="line">	int number;</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		System.out.println(&quot;一辆颜色为&quot;+color+&quot;轮子数为&quot;+number+&quot;的车行驶在蜿蜒的马路上&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="类与对象的区别"><a href="#类与对象的区别" class="headerlink" title="类与对象的区别"></a>类与对象的区别</h2><ul>
-<li>在程序中对事物的描述与该事物在现实中的形态保持一致。为了做到这一点，面向对象的思想中提出两个概念，即类和对象。其中 <strong>类是对某一类事物的抽象描述，而对象用于表示现实中该类事物的个体</strong></li>
-</ul>
-<h2 id="面向对象三大特性"><a href="#面向对象三大特性" class="headerlink" title="面向对象三大特性"></a>面向对象三大特性</h2><ul>
-<li>封装<ul>
-<li>只隐藏对象的属性和实现细节，仅对外提供公共访问方式</li>
-<li>好处： 将变化隔离、便于使用、提高复用性、提高安全性</li>
-<li>原则：将不需要对外提供的内容隐藏起来；把属性隐藏，提供公共方法对其访问</li>
-</ul>
-</li>
-<li>继承<ul>
-<li>子类自动拥有父类非私有的属性与方法</li>
-<li>提高代码复用性；继承是多态的前提</li>
-</ul>
-</li>
-<li>多态<ul>
-<li>类的多种形态。是父类或接口定义的引用变量可以指向子类或具体实现类的实例对象</li>
-<li>好处：提高了程序的扩展性</li>
-<li>弊端：当父类引用指向子类对象时，虽提高了扩展性，但只能访问父类中具备的方法，不可访问子类中的方法；即访问的局限性</li>
-<li>前提：实现或继承关系；覆写父类方法</li>
-</ul>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
-  </entry>
-  <entry>
     <title>整理：几款好用的Markdown编辑器</title>
     <url>/2019/920b4cfa.html</url>
     <content><![CDATA[<p>Markdown具有很多优点：</p>
@@ -542,6 +474,74 @@ python manage.py collectstatic
       </categories>
   </entry>
   <entry>
+    <title>面向对象之封装</title>
+    <url>/2020/42291650.html</url>
+    <content><![CDATA[<h1 id="面向对象"><a href="#面向对象" class="headerlink" title="面向对象"></a>面向对象</h1><ul>
+<li>面向对象编程（OOP - Object Oriented Programing）</li>
+</ul>
+<h2 id="面向过程与面向对象的区别"><a href="#面向过程与面向对象的区别" class="headerlink" title="面向过程与面向对象的区别"></a>面向过程与面向对象的区别</h2><ul>
+<li>面向过程与面向对象都是我们编程中编写程序的一种思维方式</li>
+<li>面向过程的程序设计方式，是遇到一件事时，思考”我该怎么做”，然后一步步实现的过程</li>
+<li>面向对象的程序设计方式，是遇到一件事时，思考”我该让谁来做”，然后那个”谁”就是对象</li>
+</ul>
+<h2 id="使用面向对象的好处"><a href="#使用面向对象的好处" class="headerlink" title="使用面向对象的好处"></a>使用面向对象的好处</h2><ul>
+<li>面向对象思维方式是一种更加符合人们思考习惯的思想</li>
+<li>面向对象中更多体现的是指挥着(指挥对象做事情)</li>
+<li>面向对象思维方式将复杂的问题简单化</li>
+</ul>
+<h2 id="面向对象举例"><a href="#面向对象举例" class="headerlink" title="面向对象举例"></a>面向对象举例</h2><ul>
+<li><p>超市</p>
+<ul>
+<li>客户<ul>
+<li>姓名：小龙女</li>
+<li>身高：160cm</li>
+<li>身高：60kg</li>
+<li>操作：购物</li>
+</ul>
+</li>
+<li>收银员<ul>
+<li>姓名：啊明</li>
+<li>部门：财务部</li>
+<li>员工编号：00001</li>
+<li>操作：收银、打印账单、刷卡</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><p>汽车</p>
+</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">public class Car &#123;</span><br><span class="line">	&#x2F;&#x2F; 颜色</span><br><span class="line">	String color;</span><br><span class="line">	&#x2F;&#x2F; 轮胎个数</span><br><span class="line">	int number;</span><br><span class="line">	public void run() &#123;</span><br><span class="line">		System.out.println(&quot;一辆颜色为&quot;+color+&quot;轮子数为&quot;+number+&quot;的车行驶在蜿蜒的马路上&quot;);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="类与对象的区别"><a href="#类与对象的区别" class="headerlink" title="类与对象的区别"></a>类与对象的区别</h2><ul>
+<li>在程序中对事物的描述与该事物在现实中的形态保持一致。为了做到这一点，面向对象的思想中提出两个概念，即类和对象。其中 <strong>类是对某一类事物的抽象描述，而对象用于表示现实中该类事物的个体</strong></li>
+</ul>
+<h2 id="面向对象三大特性"><a href="#面向对象三大特性" class="headerlink" title="面向对象三大特性"></a>面向对象三大特性</h2><ul>
+<li>封装<ul>
+<li>只隐藏对象的属性和实现细节，仅对外提供公共访问方式</li>
+<li>好处： 将变化隔离、便于使用、提高复用性、提高安全性</li>
+<li>原则：将不需要对外提供的内容隐藏起来；把属性隐藏，提供公共方法对其访问</li>
+</ul>
+</li>
+<li>继承<ul>
+<li>子类自动拥有父类非私有的属性与方法</li>
+<li>提高代码复用性；继承是多态的前提</li>
+</ul>
+</li>
+<li>多态<ul>
+<li>类的多种形态。是父类或接口定义的引用变量可以指向子类或具体实现类的实例对象</li>
+<li>好处：提高了程序的扩展性</li>
+<li>弊端：当父类引用指向子类对象时，虽提高了扩展性，但只能访问父类中具备的方法，不可访问子类中的方法；即访问的局限性</li>
+<li>前提：实现或继承关系；覆写父类方法</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Java</category>
+      </categories>
+  </entry>
+  <entry>
     <title>Python3爬虫(四)--User Agent与代理IP</title>
     <url>/2019/ac32d860.html</url>
     <content><![CDATA[<h3 id="为什么要使用User-Agent"><a href="#为什么要使用User-Agent" class="headerlink" title="为什么要使用User Agent"></a>为什么要使用User Agent</h3><p>这个User Agent在系列文章第二篇中有简单的说过<a href="http://t.cn/Ai9l4nDA">python爬虫(二)-用urllib实现百度翻译</a>，今天详细说明一下</p>
@@ -610,31 +610,6 @@ python manage.py collectstatic
       </tags>
   </entry>
   <entry>
-    <title>python爬虫(零)--爬虫基础了解</title>
-    <url>/2019/d5fa4a03.html</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>之前玩过几个星期的爬虫，由于工作原因就没有去研究了荒废了大半年了，现在基本都忘干净了。最近想重新学习下爬虫，因为我觉得爬虫特别有意思，特别是想要批量下载东西时，写个小爬虫分分钟的事就可以弄到手了。现在是互联网时代，垃圾信息特多。想要快速找到并且获得自己想要的资源爬虫肯定不可少咯！！！</p>
-<p>因此以后有时间的话，就会把自己学爬虫的过程记录下来，见证技术的成长！！！顺便分享，希望能帮到需要的人。</p>
-<h3 id="1-什么是爬虫"><a href="#1-什么是爬虫" class="headerlink" title="1. 什么是爬虫"></a>1. 什么是爬虫</h3><p>爬虫，即网络爬虫，大家可以理解为在网络上爬行的一直蜘蛛，互联网比作一张大网，二爬虫便是在这张网上派来爬去的蜘蛛咯，如果它遇到资源，那么它就会抓取下来。想抓什么？这个有你来控制它咯。</p>
-<a id="more"></a>
-<p>比如他在抓取一个网页，在这个网中他发现一条道路，其实就是指向网页的超链接，那么它就可以爬到另一张网上来获取数据。这样，整个连在一起的大网对这之蜘蛛来说触手可及，分分钟爬下来不是事。</p>
-<h3 id="2-浏览网页额过程"><a href="#2-浏览网页额过程" class="headerlink" title="2. 浏览网页额过程"></a>2. 浏览网页额过程</h3><p>在用户浏览网页的过程中，我们可能会看到许多好看的图片，比如 <a href="http://image.baidu.com/">http://image.baidu.com/</a> ，我们会看到几张的图片以及百度搜索框，这个过程其实就是用户输入之后，经过DNS服务器，找到主机，想服务器发出一个请求，服务器经过解析后，发送给用户的浏览器HTML、JS、CSS等文件，浏览器解析出来，用户便可以看到形形色色的图片了。</p>
-<p>因此，用户看到的网页实质是由HTML代码构成的，爬虫爬来的便是这些内容，通过分析和过滤这个HTML代码，实现对图片、文字等资源的获取</p>
-<h3 id="3-URL的含义"><a href="#3-URL的含义" class="headerlink" title="3. URL的含义"></a>3. URL的含义</h3><p>URL，即统一资源定位符没也就是我们所说的网址，统一资源定位符是对可以从互联网上得到的资源的位置和访问方法的一种简明的表示，是互联网上的标准资源的地址。互联网上的每个文件都有一个唯一的URL，它包含的信息指出晚间的位置以及浏览器应该怎么处理他。</p>
-<blockquote>
-<p>URL的格式由三部分组成：<br>①第一部分是协议(或称为服务方式)。<br>②第二部分是存有该资源的主机IP地址(有时也包括端口号)。<br>③第三部分是主机资源的具体地址，如目录和文件名等。</p>
-</blockquote>
-<p>爬虫爬取数据时必须要有一个目标的URL才可以获取资源，因此，他是爬虫获取的基基本依据，准备理解它的涵义对爬虫学习有很大帮助。</p>
-<h3 id="4-环境的配置"><a href="#4-环境的配置" class="headerlink" title="4.环境的配置"></a>4.环境的配置</h3><p>学习Python。当然少不了配置环境，最初我用的时PyCharm，比较好用但是比较吃内存，后来改用微软的VS code。不过我觉得PyCharm要比VS code好用一点。在windows下我用VS code。Linux下推荐用Eclipse for Python另外还有几款比较优秀的IDE，大家可以参考这篇文章<a href="http://www.oschina.net/news/57468/best-python-ide-for-developers">学习Python推荐的IDE</a> 好的开发工具是前进的推进器，希望大家可以找到适合自己的IDE</p>
-<p>下一篇，就开始进入Python爬虫学习得殿堂了。</p>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>SpringMVCHelloWorld</title>
     <url>/2020/e23bce6.html</url>
     <content><![CDATA[<p>下载引入jar包</p>
@@ -663,20 +638,29 @@ python manage.py collectstatic
       </tags>
   </entry>
   <entry>
-    <title>新的篇章</title>
-    <url>/2019/4157f7a3.html</url>
-    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <div class="hbe-input-container">
-  <input type="password" id="hbePass" placeholder="" />
-    <label for="hbePass">您好, 这里需要密码.</label>
-    <div class="bottom-line"></div>
-  </div>
-  <script id="hbeData" type="hbeData" data-hmacdigest="24a972a8a72200bb3a7a0ef2613e4f354b94fefd876b2ea5da53a4918edd0efb">6dfc6340cef5bdd130bbc9c0ec0e5810b6812249d2e93cede7895d4debdc6ed9ed12d21042de4e79a9392522928a33702cc804eab5d672bc77b3ecac5149ac8eb79ad7bdcbe0d5e7a4a476c169c75749ac7e24b8dbf7d43498eca0e70723ad18d1bfda0c1c5cf0c7a02d4a99c1910d7fa94ca3dc5b255cf9d152573767ba00b119e11bfb5e269bb8a64d266b0304cb77214f30d8270e501a73751519708c3a317dbe9857ec75c0d6ef4fb8bb50ed17f0d5795d79f1e5201942e9efbc4608e78e93203dc8f7fa40c51690a54be0f15a98768612c809bc5faed5880b05b8f2d612bdf8dbf4208ca150cdf84576ac9f74f033f1dac9c1fd8e522c4c177f995132110bf6ac7a9266aaba4631aef6d717814a9300e161edbe338047369e08624ff708cc79246f52e540f34f53b33af34bd37f5554942ffd369026e5a029cfd9c7c8ad738671d65d924e39830b21c20c4407980715a2089a3b5feba0eee6a48ca7c83c497e9cf89d720be5853831d94466301e12d44deacb75e7871c9c799ff19f7c2811283d650f69cbfd376b889b038b8410ddbb6077c1578bdffdb639e5bfd8dda90c3de5195a95dd21ba51f00fa8d1cce541f2b78b0d9316a98fb2e9173d0d91118988b61fda4e4cdce245deb4321791050207d46313a537609fc867ff65504ff0c57e144fccfc02338642651fd3e612ff5bed7339096ae38ccf04d84fa95c9ab7e9b00e199cf4c7c68663a744db939e38651d76823f85ef455e9ce0d3e15080c77b4a10a87f8f013f0e5b89ed40f02bf93809a8407d7884ecd9257d570d54fc696b6aa2bcbc6797942b7a9d0587304e39a1fc504194f5d6274ad3eb761c6f1c3d1e655ae64cb0c64d375a4e65ec0b1360ff7803e320dc3799c2992fea5da97d3b1a1a866e09ea2b63cf5e15717c2a3658a3c1a03f491f4f6151e3fe2eb87f966aa2082b74b6c3e5752eedcd9e7a491ad6a532ed2fa5f9c30ba0e84611f465c55fe2d3f219ab3d53dfdadf8e1f29fd9dfc23b56edd3adca9d1ee7f62c51b57f19d94624799679d063cf26dbc82d97a0b3dc02f3f55a7a41fc3bb93c38d43e1759a097af32761b71f874c8c66175b55316b1ead86cc233ad30d8c95485f74b9d555462cc015726a9fa317887fdde68b4f3a5106c5493fa8453f7ac49cdc223faedde79dfcdbbee5be211c0f5ee810bfb61fbacc1724478b82c06589e2793ffd879b2761056ff105e87836c98bade00057d13ab003a34fcbdd5b01a2027d16bd7ebc382bef4511e1ac70ee8d6f02987ff3b2363e300347afa26ee2f418fb4afae6429a640cff0807f27a55b2831aaca78e60fef9be0c1221972b5dfd87d8f8b610ef6dabb2755ced2027399d5c46ac1e9fc24b705fc4236550f84f0f241841c1646bba262b7c45c98dd93fe659915507d2a41604c9badc09daf217fc762f6f6a7aa92ab576b4fb1eb330f3feb0d8017a16344e39f46b7c8836f19663864aded254f926120b17be189cb41f22d9d0bbb9b8bb163dab48b9ab25956cb17c58bdea52372dda6b3463509c59a2ab6e4a7f562854e77cb7ace24d0b8c5a0486eabdcd4382da585c1873050532945c6332c33bd2f43a651a744799e07de36182b3f432ab847c332266a0931c05dd193e8a47c7c92d02db3b82682be5530550fcd5d36125e79667a1bffb52ebaa600872980159ff2bd56c7d9b6ece15f2be8b2669f278c2ae72f0e8a43697d86672409d120928c1b29210100761bef1c685dd092e0c17c8de2aec97be493bc2a1356b491f6da39f192fd019b0a48e8cb46f1e0cb73f7acaf773e84f92500cd54f1918c7c3e36cb478a0ec0fcfe7e99334b2305a7e6af017f6b19a96dc4908d5283d3f5c27d5393c8cd2c8a84941f9d175f8e2c1ef9e2afb48d31f3684378f54916a17ca888a7eec56f2f3417a1f8b04cd08ef7fdb26da296e9da963d1d42d95a9c4bfa395d9e43fe5e205348fd4f588835a0e138ffc1199af6447365b46cc6f61425244199b77f16916921b56bc3dde300e9eba5097fbd16d87c95c6bb661c399cf8adbcc8c29f5d4add049806985719f6588fd37b8d1dfdce4e72622231a5efb53ecc58cda1c0212848bb69c708079a48a55c4c28fe65d5cccdf04ba241ee86f6ec97197ce918832623def71975b5083bfc9ebe33dc644243057181f959cd61a56c9bf2bb6007821b05e5dc4eb35ca5f80764c8db5618a2a5ca8e8f4963aec6e34ae6eba03df65a03f5075acaf581d26114b6ab1f8a33f75753b22537901491af02b400508fd1760fb87a90e5c33ce7a5c0e309f4cf8e005ccc94c3cec535ef870b0e8476a6b3f37a964cade971343ab602887dcaeaafd167d45080d23b6a4f4b673f652e8975b7366d4270479b056c15700bf9798ec13ca0ebcddc7c0e86ef4158c1ad8154545aac639f91928d5c09ca86dc844e9df44d06c625e834bc46c8ce4bfdfbdbe68a7f903f64ca7c14a1d2e2924f1b3317e29b1fa1888db5e92c570b67c5d002eba13cd92fc0ec63db02aa521264a6678fc43db9213916a034dc46c779ab64b77827b373d84476a9abd0bbce11a47947f47e0a6dfcb358a0e33ed19aec1a6ea98fdf9ad777610c833d62d9849f0040cccece761348d9162c9e88e3aacad215da3c160063b71e40f02e2388630cc17f2e2d63ea6861613ea11205cfd380d7e426f91170f107135ac941a82392d8b87a2c755ba6026ce86ec7a8834bcba1f3332c4b7736e90e89c03d7e20964fdadce0256e4963ac7d692bdd7af90a3a91d400a2f1d16b4bb6087178b38d4bf0948e8ba7eb5dee380f43938e0922ab454a3d5733c786d99e55c6ebab8ac0e7bece996ae70b356d42286d6e3d598cb36c496ae59bf2d1bee9f5817dff267c1419bfda81d4b8086b878f9c6bb8344f528945364a801d0930ad79164252695f7880617a46689fd71cffadd47f3a20fdb47b8f3cd2702a2af8b8afdd5529cccba577aeb39c5988c36140a9dedb544c334467fd7d3b6caa90142ba99056f3a00d9a8e818ab62f2cd38b771c6e77d697e68e3670a058358a1bc5a68a39d56713ac57621aff3608e5f323a2196df80f919c10a328090b7125dda2e316d2190749c733cbdca0f6390ac6c5029a178cc054e36f1820a5d557b355c3a66def16f7a9cfc0d553f298c54a502f80517f6f1d3a4c48ed928fdfe32e538bc9078cd910502e510d1b0a5cda661a8180938a8c3c2a26fcb0158b76aef3d443d8ca44fe618f5313f082d1742bb26cb071f2b626def6b1aca3995bb94e2fb5c4eb238d5ff206132168a4be3ea5a4199eaed3b0889961eb2bcd2b7fd0b3d4642d0a3a2593144f69ff89ca598436853ca1ab30eac4411b9928ff519d6b1ce2d975247e0ef68ee19692489589a4c13bb8583e10c3f676ad321576134c1297d7eff2033167062a18e287e82bdc277981eefe58597e26dafe7601ff690298fa559065142a11fd1046e0c1eb88deadb748e72e120cd491b5277cc6377e717c4f898c9480e61cec425d2287e3766622b59bf755712be317d88a6f7e072adaf6dcbee8c950d72550c6c09effbc11ad7e628c3cf29dd10e3913ea4535e48873ac067399d588d55b6918922ad07d6e31fd821b1375197dc6014bc275a112f3a4a3c3f07cd68937a7be9dbdc7c264c44c4f55b91619384c27a994dac7786b140024b926b6a002257d03895f13b564c733a8386fc5f08ec3e290b2841ee52c77a847fa4d6ab564f0efe3ce419c79c9384c9db85cc71feeac8abeda6a7fd017b5b835f38091d2a2549445d6c0fb198ff4daa2f64a239259eacfa639f0dfca9c27e6c7435844d4678bf0a2f2651956dcf8327ba3e20435314159466a3fcaceb7dde2c40115b1ff0450b1372ae1d73217ffd4d894be23fe8f3ad0007a294adf34ab517eb44656ea84d6be3a9a7824a2e491c51b0c08fe0e2ade24eb71c8a0a4af929c839f63da9d8ddabcb1c845d260524496350149b664deae2a41c8c97cb7d43af3d586fd536c9a0ef23b6ddd97c11d7a94f1d638a581960af4e75250d2c8d285cbc8c0bff87bf41746e7b6485ea0defa14267643bcf998b1fe3bd28e35feba8b40bbc5794d9203260a887d1aa83c5fc80088ba246e0b73f376d91da21a94b02185a54f45fb5e2768e73c7acde94e9422c9e9942c4c6d6a6f3c6ded185bbee822d11aa962ab2ae4f3c3ad3a15eb8499416258e0d1c43142a919737bbe8b538b63810b06613a40003f86d39fb1305e8d9da73c23886088df8253d6c279e243366657e18752c4d6121dc47777bc6e478a189448e4d3fe8ba0fa49aa614374f2d6de5aca633e9fea333ed7ef2f2f6b8a6b9fffc4cb0457efcb9d54324eed89acc6cc58a1a0092fbc7be6190c4b4ef5849c18d61492d809eec11c309615c3916704deb70a1e0dc5230acdeaa42dd0f02e8337d37dad7f0e7a7e5b4373033967c5f764c3d28e260b304c0bc583c2de0789e0b5a56a2c096eaa00101fbd7a0d88e11dde907d5f4b02623269cc27214fb5e52ca4dbc834f767ed97abfc107249673c11c1822638128e8146e660b27a64b95352aaf53bb657a880d5b13933fb3df16854ea9bc6435c983429831c3eb4c65bad409467c59f85bfd26ea46cb3e27ea38fb18e9f505f1d26adedb40a07273c31d4e9a3ba3a2786970678db3684d9559b15c4d62e2018ac4a6bad5092305935f22ad40c3ef93951a62bc225e805be6c574d994862121ddf897abcf84554a037a999996a5017c73f08c5e7654a9a1c9d5f475a2c3d8fb5890e39ba02a10a396652ca113e1f0228bb00f7f17f39801a9b895617c0ae97d09c2051f97d71ac7fc6ae2f90c914e6e4fa14900ecf8bc060a7dff09f594a8f426a80c1eb8ba5f70454a091cd81681dd36d54571a8cbb536b00e05ae6cde2ac83e7fa2b62ba938e0bcaf3d4e312fe2002bc9706d52fcd2c5881e4fd39bba88b2239f48c526b07fa0a7c64d6ce09f89cb4dbc4e6b2c0267721c015367ec9741d4bf2b57b78b731d38c938c34c5790010135419ad76cadfa5e0c0d177663c7ef1207b627a59370064db09d2edc8bfb986417aa0cca9d2af353353cb5fe39ce4fae9e27da08f2d5c5bf3e4784abff1757b7cd7d5eb4430b5135c9787b48e41b189099fcfccd572f22e03be53c339763f12d2119aad7a8f95ddad606ac21b143ba245eb6605d6f23fcc495b0382e219ff1cf2ed07b934ff4b71764989bb2a057be9d116c696146665f0d6f842e78ce525707a5b7385f5daccf270d9d677d6cb44f750137700c8153f39455a181574259437a6f3431d7eb2bf3d3c963e59dfc5b3e0f8d335d313f9d034592e336138b03ec435d92c40c45ae3c8d177f5fe42877d899b48f6ca3469e781115b7bfb98cec44060b4611161c96e267caf46cc0b851ee6713fa31dc3664b7849b9d00730dfde35c0a1f654da82a5528e5f62bf12b189253899a4b1cdaf5c2e40272f59cceef5071980f88852136e49007c2e51c35301b7f8bd0ccbb80042ba8df4f7115922e47b6eb7b6ca2cb66ddcf93db94a1b9cfca03cdc205df5628b85587f71e659d5556ecac868b3373386992bca29d211ba5bc3f7405de57d871becd60e4ad325866631bda55b58639f39aa0cfa41f26f1642f58c2646373543deadb162fa0c65a8bb155344c3c28ad0ea8cfb38a061f176e1425ef869473df5bdfb441d16e5c6c390fa0128b3d109093f50dde6c5c252a885f37d0bb68096bf353fe233608d7f121f53aabed777e81eaef636d356e00513fd76cfa488a1ec86ea166d6a77371149e0e652f5a995a11169ac761e31c8d7855a72b77a63cc9c760441a7fd41dcab7c6bda3f0d6e5b20e5e4995bf408e2298715f640d6acae84553fd1a6a03ecfe04fe7970bfd9c2a47e9bce92a7e8a4280a59ce167346fa1988e0f23b96b84b39d85a522de6e9f8d0084a8d43b30f92d18365df9126fb68b62012f0b0e7841e3c0e92888a858e8d444543d0fa4ef6ab4bda82a577baf70ef76ebab83b58becaafcc423568a9b33e7f360319355822b8afeef1c83785c54d9782bf1b5a1d1a629b3d1a404c162a16dfda2f4b79e26c8a503f45eaa036fb1f90b7e76086061737c85142d8816e8de63526d6d22c6472dbeb68da695c417374af80e2289b4da5d9e67502f52c6a28e885221dc17531365b1b963a90d7a7bc6bb4a4ddd847ea9e9fb57a4ee7c061d4821f95d8066bd28f430d05c75fbfa00843d978e16ca04521d6ef3e8719085ad5213c26e9f49e3a701a20987b53cf58f6420bf19ca6b125b0c7ecd996aaf4f33f47c6342691edc529cc1d9f8c0e15d99b74d63224489f239acce9f73b953cdf50bd0047433d8f708bcd695426499efdd2f836a673be6f368945a7a3b0b570139e667c0dfc14bb42be6e8f1b83bc6d68998b760e963b63ae39ba0a5c24af802c1ee53954cef4b9a1984fa1826e88efaa702d827c8f696e3d9ba5086162c7a769a52b6f9f1650a6489e0f80b3da23f71806144f2f5264f3df045f748ea4ed0a220cbf21431cda582861870d90bfef4fa88d596068dc9bcecb6edb7a80162dc9efb388ee59590b8b58f902eb864ebb503f2d2efd12dc1c725a0179e3c3b5c7291608ac1d5cb995da91662f61a68261628dc5e65b8518f7fb293ba7e00c16eef62c80ef53eaf8edc732c2d8f0437306ecf1d1366ee3cfbbaa39d15f972fd81cdfc670e09010585947b34e99074af906bce6c7564f48a709e2faa370c5f6c864008e369637b23912c26672a1e7e892de9bd7fc8ca09c6a42e366a783c6ecfd870f1661825aa88c6b123838d5ac38bd487828c40a79bc83a90434cfee1e828e776229331e6e6cf067377921b445fca839ca8cea0302f2cc869c40ae8ecd8ceafbe8c513cda2ef90ceeed55cb131e057eaa87385f06403506129a34e35320906531c68abb88672ed429af6b8dfd40c413e859a2821b5fd4b179eea2e305ef68a50d01b7f413bc29d312732dd1ec2bb9dc7fded192b73b4558c76533a3257a61aa0f251d9b8e8a74e02471d96b30eaeab481a1ee7ea816fa43add27422a90f398d0cdb23e3c936daa57f221f4a2ccb421d9591ae2f14cc73cfa8c741021b06f8fca880cc7d813793d754996fbb472569f9c2898e34ce281837d0f1fd47e09e43264ccbd8ae909b428d6cb39b6dc16af0e2a6db9b73a1648082393798f1aa0e89fcce210bd47c51f1b0eee635de83856dee6384294a2893a54c0a0ca705f3897bbfb0a9880947531441b9b47c5bcfcbe65520265ee5db19e932918e6c8599317b96194f83a0017117f61b225e311fe98bf44f12591b4f009fd06e7ee0f01712a5c78b0effce68c39a6febf599ae23a046910a19ab2ba50e5fe838699b2ecbc5fd7e3b7077aaec1a864c41741089c1f402a37fe513aa30314a7bd08cf970279e0d24b695358f2b91044cfa135451695004f71c03534a6478410e950b3aed80ec934afca77165e9f0803a0808ea0b7b5a229803e06a79cdb1e1decffcbcb8457b17e4491d53f0450347f4e327e9c49cab45d600bb3e9bf862e7c26eb2db259d7f4294f3c5e7433963463f1323cb3bf451c83f16a7f4656747b6be5226914aa2d181607bd48ab8363d60ba0ec503e99622f165921abd79d8333243d5fee8794e3960a9e6f001d186261aeabb85ecd7a73955f4f71895cd7f96c2fe3d2ea2f0ffe0e1a8ab42bdd733fd4a4d1938c5630eb1e82e57370e8760cd9c57bc5901aa8050653c436c2769d6b5338527aa21febac725c842db6aea31b2221e0cd29327ac42cc92ed3977f1387a3b9c999a4381924a0b413c0ff60368a2dcc8fd1f860e0337aa7b87398660c837875420e2e755521495c76c090e0bd407ee78e806be86c3aa0d0928068a90b042f96fe385f40ca977fc0d61776cd96bfefe9a4cba99301a0e298991e84bafe69f91472aa839c4ef1b60a3b6dfc2321164feac5c8308dfad9673b9fc45f7b6cd8119f56f6d91e8f476308cc828c04be07363b86e78e18651446c8909333b2ef7d32d33f2b78a28beb1d2e1e4def70ccbc942fe6ad07e0501b43808b523f4df709b2f5b9f841d399c6f00cb2259a2ca40b3ec971e7cef1816640406cfa9eabbb6c71d74e882514a8ed05cda8c59799a0f7e2d5db416ea3ead91e1c3393eb0ec27d0e46ab99ea635ddd0ef14f60dd969875c49aef7472a1d0b66fbc7821820731e5e348a167c7554f70525909eba1426f7b9e58b2dadd4bbcccf489f441a6df2ed788eaa29e761c2023b09d0f84d509179746c804f32bfb0652fd3d78b00021b3990c3ecb68619a7f92cabc1464c2f1b1a7</script>
-</div>
-<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+    <title>python爬虫(零)--爬虫基础了解</title>
+    <url>/2019/d5fa4a03.html</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>之前玩过几个星期的爬虫，由于工作原因就没有去研究了荒废了大半年了，现在基本都忘干净了。最近想重新学习下爬虫，因为我觉得爬虫特别有意思，特别是想要批量下载东西时，写个小爬虫分分钟的事就可以弄到手了。现在是互联网时代，垃圾信息特多。想要快速找到并且获得自己想要的资源爬虫肯定不可少咯！！！</p>
+<p>因此以后有时间的话，就会把自己学爬虫的过程记录下来，见证技术的成长！！！顺便分享，希望能帮到需要的人。</p>
+<h3 id="1-什么是爬虫"><a href="#1-什么是爬虫" class="headerlink" title="1. 什么是爬虫"></a>1. 什么是爬虫</h3><p>爬虫，即网络爬虫，大家可以理解为在网络上爬行的一直蜘蛛，互联网比作一张大网，二爬虫便是在这张网上派来爬去的蜘蛛咯，如果它遇到资源，那么它就会抓取下来。想抓什么？这个有你来控制它咯。</p>
+<a id="more"></a>
+<p>比如他在抓取一个网页，在这个网中他发现一条道路，其实就是指向网页的超链接，那么它就可以爬到另一张网上来获取数据。这样，整个连在一起的大网对这之蜘蛛来说触手可及，分分钟爬下来不是事。</p>
+<h3 id="2-浏览网页额过程"><a href="#2-浏览网页额过程" class="headerlink" title="2. 浏览网页额过程"></a>2. 浏览网页额过程</h3><p>在用户浏览网页的过程中，我们可能会看到许多好看的图片，比如 <a href="http://image.baidu.com/">http://image.baidu.com/</a> ，我们会看到几张的图片以及百度搜索框，这个过程其实就是用户输入之后，经过DNS服务器，找到主机，想服务器发出一个请求，服务器经过解析后，发送给用户的浏览器HTML、JS、CSS等文件，浏览器解析出来，用户便可以看到形形色色的图片了。</p>
+<p>因此，用户看到的网页实质是由HTML代码构成的，爬虫爬来的便是这些内容，通过分析和过滤这个HTML代码，实现对图片、文字等资源的获取</p>
+<h3 id="3-URL的含义"><a href="#3-URL的含义" class="headerlink" title="3. URL的含义"></a>3. URL的含义</h3><p>URL，即统一资源定位符没也就是我们所说的网址，统一资源定位符是对可以从互联网上得到的资源的位置和访问方法的一种简明的表示，是互联网上的标准资源的地址。互联网上的每个文件都有一个唯一的URL，它包含的信息指出晚间的位置以及浏览器应该怎么处理他。</p>
+<blockquote>
+<p>URL的格式由三部分组成：<br>①第一部分是协议(或称为服务方式)。<br>②第二部分是存有该资源的主机IP地址(有时也包括端口号)。<br>③第三部分是主机资源的具体地址，如目录和文件名等。</p>
+</blockquote>
+<p>爬虫爬取数据时必须要有一个目标的URL才可以获取资源，因此，他是爬虫获取的基基本依据，准备理解它的涵义对爬虫学习有很大帮助。</p>
+<h3 id="4-环境的配置"><a href="#4-环境的配置" class="headerlink" title="4.环境的配置"></a>4.环境的配置</h3><p>学习Python。当然少不了配置环境，最初我用的时PyCharm，比较好用但是比较吃内存，后来改用微软的VS code。不过我觉得PyCharm要比VS code好用一点。在windows下我用VS code。Linux下推荐用Eclipse for Python另外还有几款比较优秀的IDE，大家可以参考这篇文章<a href="http://www.oschina.net/news/57468/best-python-ide-for-developers">学习Python推荐的IDE</a> 好的开发工具是前进的推进器，希望大家可以找到适合自己的IDE</p>
+<p>下一篇，就开始进入Python爬虫学习得殿堂了。</p>
+]]></content>
       <categories>
-        <category>随笔</category>
+        <category>python</category>
       </categories>
+      <tags>
+        <tag>爬虫</tag>
+      </tags>
   </entry>
   <entry>
     <title>django  ImageField使用默认图片</title>
@@ -696,6 +680,22 @@ MEDIA_ROOT = os.path.join(BASE_DIR, &#39;media&#39;)</code></pre>
       <tags>
         <tag>django</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>新的篇章</title>
+    <url>/2019/4157f7a3.html</url>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">您好, 这里需要密码.</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="24a972a8a72200bb3a7a0ef2613e4f354b94fefd876b2ea5da53a4918edd0efb">6dfc6340cef5bdd130bbc9c0ec0e5810b6812249d2e93cede7895d4debdc6ed9ed12d21042de4e79a9392522928a33702cc804eab5d672bc77b3ecac5149ac8eb79ad7bdcbe0d5e7a4a476c169c75749ac7e24b8dbf7d43498eca0e70723ad18d1bfda0c1c5cf0c7a02d4a99c1910d7fa94ca3dc5b255cf9d152573767ba00b119e11bfb5e269bb8a64d266b0304cb77214f30d8270e501a73751519708c3a317dbe9857ec75c0d6ef4fb8bb50ed17f0d5795d79f1e5201942e9efbc4608e78e93203dc8f7fa40c51690a54be0f15a98768612c809bc5faed5880b05b8f2d612bdf8dbf4208ca150cdf84576ac9f74f033f1dac9c1fd8e522c4c177f995132110bf6ac7a9266aaba4631aef6d717814a9300e161edbe338047369e08624ff708cc79246f52e540f34f53b33af34bd37f5554942ffd369026e5a029cfd9c7c8ad738671d65d924e39830b21c20c4407980715a2089a3b5feba0eee6a48ca7c83c497e9cf89d720be5853831d94466301e12d44deacb75e7871c9c799ff19f7c2811283d650f69cbfd376b889b038b8410ddbb6077c1578bdffdb639e5bfd8dda90c3de5195a95dd21ba51f00fa8d1cce541f2b78b0d9316a98fb2e9173d0d91118988b61fda4e4cdce245deb4321791050207d46313a537609fc867ff65504ff0c57e144fccfc02338642651fd3e612ff5bed7339096ae38ccf04d84fa95c9ab7e9b00e199cf4c7c68663a744db939e38651d76823f85ef455e9ce0d3e15080c77b4a10a87f8f013f0e5b89ed40f02bf93809a8407d7884ecd9257d570d54fc696b6aa2bcbc6797942b7a9d0587304e39a1fc504194f5d6274ad3eb761c6f1c3d1e655ae64cb0c64d375a4e65ec0b1360ff7803e320dc3799c2992fea5da97d3b1a1a866e09ea2b63cf5e15717c2a3658a3c1a03f491f4f6151e3fe2eb87f966aa2082b74b6c3e5752eedcd9e7a491ad6a532ed2fa5f9c30ba0e84611f465c55fe2d3f219ab3d53dfdadf8e1f29fd9dfc23b56edd3adca9d1ee7f62c51b57f19d94624799679d063cf26dbc82d97a0b3dc02f3f55a7a41fc3bb93c38d43e1759a097af32761b71f874c8c66175b55316b1ead86cc233ad30d8c95485f74b9d555462cc015726a9fa317887fdde68b4f3a5106c5493fa8453f7ac49cdc223faedde79dfcdbbee5be211c0f5ee810bfb61fbacc1724478b82c06589e2793ffd879b2761056ff105e87836c98bade00057d13ab003a34fcbdd5b01a2027d16bd7ebc382bef4511e1ac70ee8d6f02987ff3b2363e300347afa26ee2f418fb4afae6429a640cff0807f27a55b2831aaca78e60fef9be0c1221972b5dfd87d8f8b610ef6dabb2755ced2027399d5c46ac1e9fc24b705fc4236550f84f0f241841c1646bba262b7c45c98dd93fe659915507d2a41604c9badc09daf217fc762f6f6a7aa92ab576b4fb1eb330f3feb0d8017a16344e39f46b7c8836f19663864aded254f926120b17be189cb41f22d9d0bbb9b8bb163dab48b9ab25956cb17c58bdea52372dda6b3463509c59a2ab6e4a7f562854e77cb7ace24d0b8c5a0486eabdcd4382da585c1873050532945c6332c33bd2f43a651a744799e07de36182b3f432ab847c332266a0931c05dd193e8a47c7c92d02db3b82682be5530550fcd5d36125e79667a1bffb52ebaa600872980159ff2bd56c7d9b6ece15f2be8b2669f278c2ae72f0e8a43697d86672409d120928c1b29210100761bef1c685dd092e0c17c8de2aec97be493bc2a1356b491f6da39f192fd019b0a48e8cb46f1e0cb73f7acaf773e84f92500cd54f1918c7c3e36cb478a0ec0fcfe7e99334b2305a7e6af017f6b19a96dc4908d5283d3f5c27d5393c8cd2c8a84941f9d175f8e2c1ef9e2afb48d31f3684378f54916a17ca888a7eec56f2f3417a1f8b04cd08ef7fdb26da296e9da963d1d42d95a9c4bfa395d9e43fe5e205348fd4f588835a0e138ffc1199af6447365b46cc6f61425244199b77f16916921b56bc3dde300e9eba5097fbd16d87c95c6bb661c399cf8adbcc8c29f5d4add049806985719f6588fd37b8d1dfdce4e72622231a5efb53ecc58cda1c0212848bb69c708079a48a55c4c28fe65d5cccdf04ba241ee86f6ec97197ce918832623def71975b5083bfc9ebe33dc644243057181f959cd61a56c9bf2bb6007821b05e5dc4eb35ca5f80764c8db5618a2a5ca8e8f4963aec6e34ae6eba03df65a03f5075acaf581d26114b6ab1f8a33f75753b22537901491af02b400508fd1760fb87a90e5c33ce7a5c0e309f4cf8e005ccc94c3cec535ef870b0e8476a6b3f37a964cade971343ab602887dcaeaafd167d45080d23b6a4f4b673f652e8975b7366d4270479b056c15700bf9798ec13ca0ebcddc7c0e86ef4158c1ad8154545aac639f91928d5c09ca86dc844e9df44d06c625e834bc46c8ce4bfdfbdbe68a7f903f64ca7c14a1d2e2924f1b3317e29b1fa1888db5e92c570b67c5d002eba13cd92fc0ec63db02aa521264a6678fc43db9213916a034dc46c779ab64b77827b373d84476a9abd0bbce11a47947f47e0a6dfcb358a0e33ed19aec1a6ea98fdf9ad777610c833d62d9849f0040cccece761348d9162c9e88e3aacad215da3c160063b71e40f02e2388630cc17f2e2d63ea6861613ea11205cfd380d7e426f91170f107135ac941a82392d8b87a2c755ba6026ce86ec7a8834bcba1f3332c4b7736e90e89c03d7e20964fdadce0256e4963ac7d692bdd7af90a3a91d400a2f1d16b4bb6087178b38d4bf0948e8ba7eb5dee380f43938e0922ab454a3d5733c786d99e55c6ebab8ac0e7bece996ae70b356d42286d6e3d598cb36c496ae59bf2d1bee9f5817dff267c1419bfda81d4b8086b878f9c6bb8344f528945364a801d0930ad79164252695f7880617a46689fd71cffadd47f3a20fdb47b8f3cd2702a2af8b8afdd5529cccba577aeb39c5988c36140a9dedb544c334467fd7d3b6caa90142ba99056f3a00d9a8e818ab62f2cd38b771c6e77d697e68e3670a058358a1bc5a68a39d56713ac57621aff3608e5f323a2196df80f919c10a328090b7125dda2e316d2190749c733cbdca0f6390ac6c5029a178cc054e36f1820a5d557b355c3a66def16f7a9cfc0d553f298c54a502f80517f6f1d3a4c48ed928fdfe32e538bc9078cd910502e510d1b0a5cda661a8180938a8c3c2a26fcb0158b76aef3d443d8ca44fe618f5313f082d1742bb26cb071f2b626def6b1aca3995bb94e2fb5c4eb238d5ff206132168a4be3ea5a4199eaed3b0889961eb2bcd2b7fd0b3d4642d0a3a2593144f69ff89ca598436853ca1ab30eac4411b9928ff519d6b1ce2d975247e0ef68ee19692489589a4c13bb8583e10c3f676ad321576134c1297d7eff2033167062a18e287e82bdc277981eefe58597e26dafe7601ff690298fa559065142a11fd1046e0c1eb88deadb748e72e120cd491b5277cc6377e717c4f898c9480e61cec425d2287e3766622b59bf755712be317d88a6f7e072adaf6dcbee8c950d72550c6c09effbc11ad7e628c3cf29dd10e3913ea4535e48873ac067399d588d55b6918922ad07d6e31fd821b1375197dc6014bc275a112f3a4a3c3f07cd68937a7be9dbdc7c264c44c4f55b91619384c27a994dac7786b140024b926b6a002257d03895f13b564c733a8386fc5f08ec3e290b2841ee52c77a847fa4d6ab564f0efe3ce419c79c9384c9db85cc71feeac8abeda6a7fd017b5b835f38091d2a2549445d6c0fb198ff4daa2f64a239259eacfa639f0dfca9c27e6c7435844d4678bf0a2f2651956dcf8327ba3e20435314159466a3fcaceb7dde2c40115b1ff0450b1372ae1d73217ffd4d894be23fe8f3ad0007a294adf34ab517eb44656ea84d6be3a9a7824a2e491c51b0c08fe0e2ade24eb71c8a0a4af929c839f63da9d8ddabcb1c845d260524496350149b664deae2a41c8c97cb7d43af3d586fd536c9a0ef23b6ddd97c11d7a94f1d638a581960af4e75250d2c8d285cbc8c0bff87bf41746e7b6485ea0defa14267643bcf998b1fe3bd28e35feba8b40bbc5794d9203260a887d1aa83c5fc80088ba246e0b73f376d91da21a94b02185a54f45fb5e2768e73c7acde94e9422c9e9942c4c6d6a6f3c6ded185bbee822d11aa962ab2ae4f3c3ad3a15eb8499416258e0d1c43142a919737bbe8b538b63810b06613a40003f86d39fb1305e8d9da73c23886088df8253d6c279e243366657e18752c4d6121dc47777bc6e478a189448e4d3fe8ba0fa49aa614374f2d6de5aca633e9fea333ed7ef2f2f6b8a6b9fffc4cb0457efcb9d54324eed89acc6cc58a1a0092fbc7be6190c4b4ef5849c18d61492d809eec11c309615c3916704deb70a1e0dc5230acdeaa42dd0f02e8337d37dad7f0e7a7e5b4373033967c5f764c3d28e260b304c0bc583c2de0789e0b5a56a2c096eaa00101fbd7a0d88e11dde907d5f4b02623269cc27214fb5e52ca4dbc834f767ed97abfc107249673c11c1822638128e8146e660b27a64b95352aaf53bb657a880d5b13933fb3df16854ea9bc6435c983429831c3eb4c65bad409467c59f85bfd26ea46cb3e27ea38fb18e9f505f1d26adedb40a07273c31d4e9a3ba3a2786970678db3684d9559b15c4d62e2018ac4a6bad5092305935f22ad40c3ef93951a62bc225e805be6c574d994862121ddf897abcf84554a037a999996a5017c73f08c5e7654a9a1c9d5f475a2c3d8fb5890e39ba02a10a396652ca113e1f0228bb00f7f17f39801a9b895617c0ae97d09c2051f97d71ac7fc6ae2f90c914e6e4fa14900ecf8bc060a7dff09f594a8f426a80c1eb8ba5f70454a091cd81681dd36d54571a8cbb536b00e05ae6cde2ac83e7fa2b62ba938e0bcaf3d4e312fe2002bc9706d52fcd2c5881e4fd39bba88b2239f48c526b07fa0a7c64d6ce09f89cb4dbc4e6b2c0267721c015367ec9741d4bf2b57b78b731d38c938c34c5790010135419ad76cadfa5e0c0d177663c7ef1207b627a59370064db09d2edc8bfb986417aa0cca9d2af353353cb5fe39ce4fae9e27da08f2d5c5bf3e4784abff1757b7cd7d5eb4430b5135c9787b48e41b189099fcfccd572f22e03be53c339763f12d2119aad7a8f95ddad606ac21b143ba245eb6605d6f23fcc495b0382e219ff1cf2ed07b934ff4b71764989bb2a057be9d116c696146665f0d6f842e78ce525707a5b7385f5daccf270d9d677d6cb44f750137700c8153f39455a181574259437a6f3431d7eb2bf3d3c963e59dfc5b3e0f8d335d313f9d034592e336138b03ec435d92c40c45ae3c8d177f5fe42877d899b48f6ca3469e781115b7bfb98cec44060b4611161c96e267caf46cc0b851ee6713fa31dc3664b7849b9d00730dfde35c0a1f654da82a5528e5f62bf12b189253899a4b1cdaf5c2e40272f59cceef5071980f88852136e49007c2e51c35301b7f8bd0ccbb80042ba8df4f7115922e47b6eb7b6ca2cb66ddcf93db94a1b9cfca03cdc205df5628b85587f71e659d5556ecac868b3373386992bca29d211ba5bc3f7405de57d871becd60e4ad325866631bda55b58639f39aa0cfa41f26f1642f58c2646373543deadb162fa0c65a8bb155344c3c28ad0ea8cfb38a061f176e1425ef869473df5bdfb441d16e5c6c390fa0128b3d109093f50dde6c5c252a885f37d0bb68096bf353fe233608d7f121f53aabed777e81eaef636d356e00513fd76cfa488a1ec86ea166d6a77371149e0e652f5a995a11169ac761e31c8d7855a72b77a63cc9c760441a7fd41dcab7c6bda3f0d6e5b20e5e4995bf408e2298715f640d6acae84553fd1a6a03ecfe04fe7970bfd9c2a47e9bce92a7e8a4280a59ce167346fa1988e0f23b96b84b39d85a522de6e9f8d0084a8d43b30f92d18365df9126fb68b62012f0b0e7841e3c0e92888a858e8d444543d0fa4ef6ab4bda82a577baf70ef76ebab83b58becaafcc423568a9b33e7f360319355822b8afeef1c83785c54d9782bf1b5a1d1a629b3d1a404c162a16dfda2f4b79e26c8a503f45eaa036fb1f90b7e76086061737c85142d8816e8de63526d6d22c6472dbeb68da695c417374af80e2289b4da5d9e67502f52c6a28e885221dc17531365b1b963a90d7a7bc6bb4a4ddd847ea9e9fb57a4ee7c061d4821f95d8066bd28f430d05c75fbfa00843d978e16ca04521d6ef3e8719085ad5213c26e9f49e3a701a20987b53cf58f6420bf19ca6b125b0c7ecd996aaf4f33f47c6342691edc529cc1d9f8c0e15d99b74d63224489f239acce9f73b953cdf50bd0047433d8f708bcd695426499efdd2f836a673be6f368945a7a3b0b570139e667c0dfc14bb42be6e8f1b83bc6d68998b760e963b63ae39ba0a5c24af802c1ee53954cef4b9a1984fa1826e88efaa702d827c8f696e3d9ba5086162c7a769a52b6f9f1650a6489e0f80b3da23f71806144f2f5264f3df045f748ea4ed0a220cbf21431cda582861870d90bfef4fa88d596068dc9bcecb6edb7a80162dc9efb388ee59590b8b58f902eb864ebb503f2d2efd12dc1c725a0179e3c3b5c7291608ac1d5cb995da91662f61a68261628dc5e65b8518f7fb293ba7e00c16eef62c80ef53eaf8edc732c2d8f0437306ecf1d1366ee3cfbbaa39d15f972fd81cdfc670e09010585947b34e99074af906bce6c7564f48a709e2faa370c5f6c864008e369637b23912c26672a1e7e892de9bd7fc8ca09c6a42e366a783c6ecfd870f1661825aa88c6b123838d5ac38bd487828c40a79bc83a90434cfee1e828e776229331e6e6cf067377921b445fca839ca8cea0302f2cc869c40ae8ecd8ceafbe8c513cda2ef90ceeed55cb131e057eaa87385f06403506129a34e35320906531c68abb88672ed429af6b8dfd40c413e859a2821b5fd4b179eea2e305ef68a50d01b7f413bc29d312732dd1ec2bb9dc7fded192b73b4558c76533a3257a61aa0f251d9b8e8a74e02471d96b30eaeab481a1ee7ea816fa43add27422a90f398d0cdb23e3c936daa57f221f4a2ccb421d9591ae2f14cc73cfa8c741021b06f8fca880cc7d813793d754996fbb472569f9c2898e34ce281837d0f1fd47e09e43264ccbd8ae909b428d6cb39b6dc16af0e2a6db9b73a1648082393798f1aa0e89fcce210bd47c51f1b0eee635de83856dee6384294a2893a54c0a0ca705f3897bbfb0a9880947531441b9b47c5bcfcbe65520265ee5db19e932918e6c8599317b96194f83a0017117f61b225e311fe98bf44f12591b4f009fd06e7ee0f01712a5c78b0effce68c39a6febf599ae23a046910a19ab2ba50e5fe838699b2ecbc5fd7e3b7077aaec1a864c41741089c1f402a37fe513aa30314a7bd08cf970279e0d24b695358f2b91044cfa135451695004f71c03534a6478410e950b3aed80ec934afca77165e9f0803a0808ea0b7b5a229803e06a79cdb1e1decffcbcb8457b17e4491d53f0450347f4e327e9c49cab45d600bb3e9bf862e7c26eb2db259d7f4294f3c5e7433963463f1323cb3bf451c83f16a7f4656747b6be5226914aa2d181607bd48ab8363d60ba0ec503e99622f165921abd79d8333243d5fee8794e3960a9e6f001d186261aeabb85ecd7a73955f4f71895cd7f96c2fe3d2ea2f0ffe0e1a8ab42bdd733fd4a4d1938c5630eb1e82e57370e8760cd9c57bc5901aa8050653c436c2769d6b5338527aa21febac725c842db6aea31b2221e0cd29327ac42cc92ed3977f1387a3b9c999a4381924a0b413c0ff60368a2dcc8fd1f860e0337aa7b87398660c837875420e2e755521495c76c090e0bd407ee78e806be86c3aa0d0928068a90b042f96fe385f40ca977fc0d61776cd96bfefe9a4cba99301a0e298991e84bafe69f91472aa839c4ef1b60a3b6dfc2321164feac5c8308dfad9673b9fc45f7b6cd8119f56f6d91e8f476308cc828c04be07363b86e78e18651446c8909333b2ef7d32d33f2b78a28beb1d2e1e4def70ccbc942fe6ad07e0501b43808b523f4df709b2f5b9f841d399c6f00cb2259a2ca40b3ec971e7cef1816640406cfa9eabbb6c71d74e882514a8ed05cda8c59799a0f7e2d5db416ea3ead91e1c3393eb0ec27d0e46ab99ea635ddd0ef14f60dd969875c49aef7472a1d0b66fbc7821820731e5e348a167c7554f70525909eba1426f7b9e58b2dadd4bbcccf489f441a6df2ed788eaa29e761c2023b09d0f84d509179746c804f32bfb0652fd3d78b00021b3990c3ecb68619a7f92cabc1464c2f1b1a7</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
   </entry>
   <entry>
     <title>面向对象设计原则</title>
@@ -745,6 +745,22 @@ MEDIA_ROOT = os.path.join(BASE_DIR, &#39;media&#39;)</code></pre>
       </categories>
   </entry>
   <entry>
+    <title>js jQuery点击网页出现会飘的文字</title>
+    <url>/2019/8516ffa3.html</url>
+    <content><![CDATA[<p>效果图</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/09/5cfc9e8d8c2b231467.gif"></p>
+<a id="more"></a>
+<p>上代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">  var a_idx &#x3D; 0;</span><br><span class="line">  $(document).ready(function ($) &#123;</span><br><span class="line">    $(&quot;body&quot;).click(function (e) &#123;</span><br><span class="line">        var red &#x3D; parseInt(Math.random()*257).toString(16);</span><br><span class="line">    var blue &#x3D; parseInt(Math.random()*257).toString(16);</span><br><span class="line">    var green&#x3D; parseInt(Math.random()*257).toString(16);</span><br><span class="line">    var color &#x3D; &#39;#&#39;+red+blue+green;</span><br><span class="line">      var a &#x3D; new Array(&quot;❤ 富强 ❤&quot;, &quot;❤ 民主 ❤&quot;, &quot;❤ 文明 ❤&quot;, &quot; ❤ 和谐 ❤&quot;, &quot;❤ 自由 ❤&quot;, &quot; ❤ 平等 ❤&quot;, &quot;❤ 公正 ❤&quot;, &quot;❤ 法治 ❤&quot;, &quot;❤ 爱国 ❤&quot;, &quot;❤ 敬业 ❤&quot;, &quot;❤ 诚信 ❤&quot;, &quot;❤ 友善 ❤&quot;);</span><br><span class="line">      var $i &#x3D; $(&quot;&lt;span&#x2F;&gt;&quot;).text(a[a_idx]);</span><br><span class="line">      a_idx &#x3D; (a_idx + 1) % a.length;</span><br><span class="line">      var x &#x3D; e.pageX,</span><br><span class="line">        y &#x3D; e.pageY;</span><br><span class="line">      $i.css(&#123;</span><br><span class="line">        &quot;z-index&quot;: 999,</span><br><span class="line">        &quot;top&quot;: y - 20,</span><br><span class="line">        &quot;left&quot;: x,</span><br><span class="line">        &quot;position&quot;: &quot;absolute&quot;,</span><br><span class="line">        &quot;font-weight&quot;: &quot;bold&quot;,</span><br><span class="line">        &quot;color&quot;: color</span><br><span class="line">      &#125;);</span><br><span class="line">      $(&quot;body&quot;).append($i);</span><br><span class="line">      $i.animate(&#123;</span><br><span class="line">        &quot;top&quot;: y - 180,</span><br><span class="line">        &quot;opacity&quot;: 0</span><br><span class="line">      &#125;, 1500, function () &#123;</span><br><span class="line">        $i.remove();</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+]]></content>
+      <categories>
+        <category>前端</category>
+      </categories>
+      <tags>
+        <tag>javascript</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>js jQuery实现点击浏览器标签切换网页标题</title>
     <url>/2019/2ec86465.html</url>
     <content><![CDATA[<p><strong>效果图</strong>：<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/09/5cfc9e735b8cb54633.gif"></p>
@@ -765,19 +781,15 @@ MEDIA_ROOT = os.path.join(BASE_DIR, &#39;media&#39;)</code></pre>
       </tags>
   </entry>
   <entry>
-    <title>js jQuery点击网页出现会飘的文字</title>
-    <url>/2019/8516ffa3.html</url>
-    <content><![CDATA[<p>效果图</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/09/5cfc9e8d8c2b231467.gif"></p>
-<a id="more"></a>
-<p>上代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">&lt;script type&#x3D;&quot;text&#x2F;javascript&quot;&gt;</span><br><span class="line">  var a_idx &#x3D; 0;</span><br><span class="line">  $(document).ready(function ($) &#123;</span><br><span class="line">    $(&quot;body&quot;).click(function (e) &#123;</span><br><span class="line">        var red &#x3D; parseInt(Math.random()*257).toString(16);</span><br><span class="line">    var blue &#x3D; parseInt(Math.random()*257).toString(16);</span><br><span class="line">    var green&#x3D; parseInt(Math.random()*257).toString(16);</span><br><span class="line">    var color &#x3D; &#39;#&#39;+red+blue+green;</span><br><span class="line">      var a &#x3D; new Array(&quot;❤ 富强 ❤&quot;, &quot;❤ 民主 ❤&quot;, &quot;❤ 文明 ❤&quot;, &quot; ❤ 和谐 ❤&quot;, &quot;❤ 自由 ❤&quot;, &quot; ❤ 平等 ❤&quot;, &quot;❤ 公正 ❤&quot;, &quot;❤ 法治 ❤&quot;, &quot;❤ 爱国 ❤&quot;, &quot;❤ 敬业 ❤&quot;, &quot;❤ 诚信 ❤&quot;, &quot;❤ 友善 ❤&quot;);</span><br><span class="line">      var $i &#x3D; $(&quot;&lt;span&#x2F;&gt;&quot;).text(a[a_idx]);</span><br><span class="line">      a_idx &#x3D; (a_idx + 1) % a.length;</span><br><span class="line">      var x &#x3D; e.pageX,</span><br><span class="line">        y &#x3D; e.pageY;</span><br><span class="line">      $i.css(&#123;</span><br><span class="line">        &quot;z-index&quot;: 999,</span><br><span class="line">        &quot;top&quot;: y - 20,</span><br><span class="line">        &quot;left&quot;: x,</span><br><span class="line">        &quot;position&quot;: &quot;absolute&quot;,</span><br><span class="line">        &quot;font-weight&quot;: &quot;bold&quot;,</span><br><span class="line">        &quot;color&quot;: color</span><br><span class="line">      &#125;);</span><br><span class="line">      $(&quot;body&quot;).append($i);</span><br><span class="line">      $i.animate(&#123;</span><br><span class="line">        &quot;top&quot;: y - 180,</span><br><span class="line">        &quot;opacity&quot;: 0</span><br><span class="line">      &#125;, 1500, function () &#123;</span><br><span class="line">        $i.remove();</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;);</span><br><span class="line">  &#125;);</span><br><span class="line">&lt;&#x2F;script&gt;</span><br></pre></td></tr></table></figure>
+    <title>mysql 8.0.12压缩包解压后找不到data文件夹解决办法</title>
+    <url>/2020/bfdf68bf.html</url>
+    <content><![CDATA[<h2 id="下载mysql"><a href="#下载mysql" class="headerlink" title="下载mysql"></a>下载mysql</h2><p><a href="https://dev.mysql.com/downloads/mysql/">mysql下载地址</a>  免安装版 直接解压后发现没有data文件夹 <br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2020/11/22/wuG4cUoRI7rlYZf.jpg"></p>
+<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><p>解压出来是这样的，没有data文件夹<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2020/11/22/3gRKmWlPCZuyHn8.jpg"><br>解决方法：<br><code>mysqld --initialize-insecure --user=mysql</code></p>
+<p>直接复制上面这条命令<br>然后cmd进入到 mysql解压出来bin的目录中：<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2020/11/22/rs5mNRGP2W8SKL9.jpg"></p>
+<p>等待一会  就发现data的这个目录了！<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2020/11/22/uR3WsPGzeAd4KHL.jpg"></p>
 ]]></content>
-      <categories>
-        <category>前端</category>
-      </categories>
       <tags>
-        <tag>javascript</tag>
+        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -811,18 +823,6 @@ MEDIA_ROOT = os.path.join(BASE_DIR, &#39;media&#39;)</code></pre>
 ]]></content>
       <tags>
         <tag>git</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>mysql 8.0.12压缩包解压后找不到data文件夹解决办法</title>
-    <url>/2020/bfdf68bf.html</url>
-    <content><![CDATA[<h2 id="下载mysql"><a href="#下载mysql" class="headerlink" title="下载mysql"></a>下载mysql</h2><p><a href="https://dev.mysql.com/downloads/mysql/">mysql下载地址</a>  免安装版 直接解压后发现没有data文件夹 <br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2020/11/22/wuG4cUoRI7rlYZf.jpg"></p>
-<h2 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h2><p>解压出来是这样的，没有data文件夹<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2020/11/22/3gRKmWlPCZuyHn8.jpg"><br>解决方法：<br><code>mysqld --initialize-insecure --user=mysql</code></p>
-<p>直接复制上面这条命令<br>然后cmd进入到 mysql解压出来bin的目录中：<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2020/11/22/rs5mNRGP2W8SKL9.jpg"></p>
-<p>等待一会  就发现data的这个目录了！<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2020/11/22/uR3WsPGzeAd4KHL.jpg"></p>
-]]></content>
-      <tags>
-        <tag>mysql</tag>
       </tags>
   </entry>
   <entry>
@@ -904,6 +904,27 @@ MEDIA_ROOT = os.path.join(BASE_DIR, &#39;media&#39;)</code></pre>
       </tags>
   </entry>
   <entry>
+    <title>python3爬虫实例(一)--爬取酷狗TOP500的音乐信息</title>
+    <url>/2019/3921d68a.html</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p> 学习完requests库与beautifulsoup这个库后，我们就可来搞一个简单的爬虫了，这次我们爬取酷狗音乐的TOP500的歌曲信息，包含排名，歌名，歌曲时长。分分钟爬取下来。</p>
+<h3 id="分析URL链接"><a href="#分析URL链接" class="headerlink" title="分析URL链接"></a>分析URL链接</h3><p><a href="http://www.kugou.com/yy/rank/home/1-8888.html">http://www.kugou.com/yy/rank/home/1-8888.html</a> ，  这个是酷狗TOP500歌曲信息页面，我们发现这里并不能翻页，一页只能显示，22首歌曲，如果我们直接用这个链接就只能爬取这一页的22首歌曲的信息。所以我们要想办法。<br> 观察这个链接，看到这个1-8888.html 我们只需要修改这个1就可以实现换页，例如把1修改成2：<a href="http://www.kugou.com/yy/rank/home/2-8888.html">http://www.kugou.com/yy/rank/home/2-8888.html</a> ， 他就可显示下一页的歌曲信息，计算一下，每页22首，共有500 ，可以算出一共有23页，也就是23个URL<br> <a id="more"></a></p>
+<h3 id="分析网页结构"><a href="#分析网页结构" class="headerlink" title="分析网页结构"></a>分析网页结构</h3><p>分析网页这个需要了解点html的基础知识，我们先将第一页的歌曲信息弄下来<br><a href="http://www.kugou.com/yy/rank/home/1-8888.html">http://www.kugou.com/yy/rank/home/1-8888.html</a> ，    打开链接 审查元素 点击 酷狗TOP500，<br>定位到显示歌曲的div可以看这个div的ul里面的li包含 这些歌曲所有的信息而且结构是一样的只有歌曲信息不同：</p>
+<p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/17/5d075192d629021290.png"><br>我们只需要知道一首歌的结构就行了<br>利用选择工具选中第一首歌曲，选中后就右边的源码就定位到了响应的地方如图：<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/17/5d074cfb692d624313.png"><br>排名： 用选择工具选择 歌名旁边的数值，这个就是它的排名<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/17/5d074e922f03a49863.png"><br>这时候我们就需要用到beautifulsoup这个库了，用这个库可以快速的获取到这个文本：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;www.kugou.com&#x2F;yy&#x2F;rank&#x2F;home&#x2F;1-8888.html&quot;</span><br><span class="line">Headers &#x3D; &#123;</span><br><span class="line">&#39;User-Agent&#39;: &#39;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;70.0.3538.67 Safari&#x2F;537.36&#39;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">response &#x3D; requests.get(url,headers &#x3D; Headers)</span><br><span class="line"></span><br><span class="line">#将页面源码解析</span><br><span class="line">soup &#x3D; BeautifulSoup(response.text,&#39;lxml&#39;)</span><br><span class="line"></span><br><span class="line">#获取到这页所有的排名  select查找的意思，span.pc_temp_num是查找span里面属性pc_temp_num</span><br><span class="line">ranks &#x3D; soup.select(&quot;span.pc_temp_num&quot;)</span><br><span class="line"></span><br><span class="line">#获取所有的歌名，div.pc_temp_songlist&gt;ul&gt;li&gt;a 这是歌名文本所在的位置</span><br><span class="line">titles &#x3D; soup.select(&quot;div.pc_temp_songlist&gt;ul&gt;li&gt;a&quot;)</span><br><span class="line"></span><br><span class="line">#获取所有歌曲时长</span><br><span class="line">times &#x3D; soup.select(&quot;div.pc_temp_songlist &gt; ul &gt; li &gt; span.pc_temp_tips_r &gt; span&quot;)</span><br><span class="line"></span><br><span class="line">#遍历输出第一页所有的歌曲信息</span><br><span class="line">for rank,title,time in zip(ranks,titles,times):</span><br><span class="line">    print(&quot;排名：&quot;+rank.text.strip()+&quot;-----歌名：&quot;+title.text.strip() +&quot;----时间：&quot;+time.text.strip())</span><br></pre></td></tr></table></figure>
+<p><strong>结果：</strong></p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">排名：1-----歌名：G.E.M.邓紫棋 - 来自天堂的魔鬼 (Live)----时间：4:06</span><br><span class="line">排名：2-----歌名：海来阿木、阿呷拉古、曲比阿且 - 别知己----时间：4:40</span><br><span class="line">排名：3-----歌名：隔壁老樊 - 多想在平庸的生活拥抱你 (Live)----时间：4:29</span><br><span class="line">排名：4-----歌名：陈雪凝 - 你的酒馆对我打了烊----时间：4:11</span><br><span class="line">排名：5-----歌名：蕾蕾的小麦霸们、张振轩 - 赢在江湖 (童声版)----时间：3:46</span><br><span class="line">排名：6-----歌名：魏新雨 - 余情未了----时间：3:36</span><br><span class="line">排名：7-----歌名：王力宏、谭维维 - 缘分一道桥----时间：4:06</span><br><span class="line">排名：8-----歌名：Yusee西 - 心如止水----时间：3:02</span><br><span class="line">排名：9-----歌名：陈雪凝 - 绿色----时间：4:29</span><br><span class="line">排名：10-----歌名：焦迈奇 - 我的名字----时间：4:11</span><br><span class="line">排名：11-----歌名：半吨兄弟 - 爱情错觉----时间：4:03</span><br><span class="line">排名：12-----歌名：Ice Paper - 心如止水----时间：3:05</span><br><span class="line">排名：13-----歌名：王琪 - 万爱千恩----时间：5:22</span><br><span class="line">排名：14-----歌名：王小帅 - 最近 (正式版)----时间：3:37</span><br><span class="line">排名：15-----歌名：杨胖雨 - 情深深雨濛濛----时间：2:35</span><br><span class="line">排名：16-----歌名：虎二 - 你一定要幸福----时间：4:19</span><br><span class="line">排名：17-----歌名：大壮 - 伪装----时间：5:01</span><br><span class="line">排名：18-----歌名：孤独诗人 - 渡我不渡她----时间：3:02</span><br><span class="line">排名：19-----歌名：王贰浪 - 像鱼----时间：4:45</span><br><span class="line">排名：20-----歌名：NCF-艾力 - 黎明前的黑暗 (女声版)----时间：2:25</span><br><span class="line">排名：21-----歌名：大欢 - 多年以后----时间：4:03</span><br><span class="line">排名：22-----歌名：彭十六elf - 戏影----时间：3:40</span><br></pre></td></tr></table></figure>
+<p>这样就将第一页的所有歌曲信息都爬取下来了，只要第一页搞定，其他页也是相同的原理，只是URL不同而已。<br>修改代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">Headers &#x3D; &#123;</span><br><span class="line">&#39;User-Agent&#39;: &#39;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;70.0.3538.67 Safari&#x2F;537.36&#39;</span><br><span class="line">&#125;</span><br><span class="line">def get_info(url):</span><br><span class="line">    response &#x3D; requests.get(url,headers &#x3D; Headers)</span><br><span class="line">    soup &#x3D; BeautifulSoup(response.text,&#39;lxml&#39;)</span><br><span class="line">    ranks &#x3D; soup.select(&quot;span.pc_temp_num&quot;)</span><br><span class="line">    titles &#x3D; soup.select(&quot;div.pc_temp_songlist&gt;ul&gt;li&gt;a&quot;)</span><br><span class="line">    times &#x3D; soup.select(&quot;div.pc_temp_songlist &gt; ul &gt; li &gt; span.pc_temp_tips_r &gt; span&quot;)</span><br><span class="line">    for rank, title, time in zip(ranks, titles, times):</span><br><span class="line">        print(&quot;排名：&quot; + rank.text.strip() + &quot;-----歌名：&quot; + title.text.strip() + &quot;----时间：&quot; + time.text.strip())</span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    urls &#x3D; [&#39;http:&#x2F;&#x2F;www.kugou.com&#x2F;yy&#x2F;rank&#x2F;home&#x2F;&#123;&#125;-8888.html&#39; .format(number)for number in range(1, 24)]</span><br><span class="line">    for url in urls:</span><br><span class="line">        get_info(url)</span><br></pre></td></tr></table></figure>
+<p>结果：<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/17/5d0765adc58c785194.gif"><br>完结！！！ 是不是超级简单！！！</p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>python3爬虫(七)--了解Beautiful Soup 4</title>
     <url>/2019/22f91623.html</url>
     <content><![CDATA[<h3 id="Beautiful-Soup-4简介"><a href="#Beautiful-Soup-4简介" class="headerlink" title="Beautiful Soup 4简介"></a>Beautiful Soup 4简介</h3><p>Beautiful Soup 是一个可以从HTML或XML文件中提取数据的Python库.它能够通过你喜欢的转换器实现惯用的文档导航,查找,修改文档的方式.Beautiful Soup会帮你节省数小时甚至数天的工作时间.<br>Beautiful Soup 3 目前已经停止开发,推荐使用Beautiful Soup 4 详情查看 <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html">官方文档</a></p>
@@ -935,27 +956,6 @@ $ pip install beautifulsoup4</code></pre>
 <p>它们的优缺点:<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/13/5d026efd05eb812920.png"></p>
 <p>推荐使用lxml作为解析器,因为效率更高. 在Python2.7.3之前的版本和Python3中3.2.2之前的版本,必须安装lxml或html5lib, 因为那些Python版本的标准库中内置的HTML解析方法不够稳定.</p>
 <p>提示: 如果一段HTML或XML文档格式不正确的话,那么在不同的解析器中返回的结果可能是不一样的,查看 <a href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/index.zh.html#id49">解析器之间的区别</a> 了解更多细节</p>
-]]></content>
-      <categories>
-        <category>python</category>
-      </categories>
-      <tags>
-        <tag>爬虫</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>python3爬虫实例(一)--爬取酷狗TOP500的音乐信息</title>
-    <url>/2019/3921d68a.html</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p> 学习完requests库与beautifulsoup这个库后，我们就可来搞一个简单的爬虫了，这次我们爬取酷狗音乐的TOP500的歌曲信息，包含排名，歌名，歌曲时长。分分钟爬取下来。</p>
-<h3 id="分析URL链接"><a href="#分析URL链接" class="headerlink" title="分析URL链接"></a>分析URL链接</h3><p><a href="http://www.kugou.com/yy/rank/home/1-8888.html">http://www.kugou.com/yy/rank/home/1-8888.html</a> ，  这个是酷狗TOP500歌曲信息页面，我们发现这里并不能翻页，一页只能显示，22首歌曲，如果我们直接用这个链接就只能爬取这一页的22首歌曲的信息。所以我们要想办法。<br> 观察这个链接，看到这个1-8888.html 我们只需要修改这个1就可以实现换页，例如把1修改成2：<a href="http://www.kugou.com/yy/rank/home/2-8888.html">http://www.kugou.com/yy/rank/home/2-8888.html</a> ， 他就可显示下一页的歌曲信息，计算一下，每页22首，共有500 ，可以算出一共有23页，也就是23个URL<br> <a id="more"></a></p>
-<h3 id="分析网页结构"><a href="#分析网页结构" class="headerlink" title="分析网页结构"></a>分析网页结构</h3><p>分析网页这个需要了解点html的基础知识，我们先将第一页的歌曲信息弄下来<br><a href="http://www.kugou.com/yy/rank/home/1-8888.html">http://www.kugou.com/yy/rank/home/1-8888.html</a> ，    打开链接 审查元素 点击 酷狗TOP500，<br>定位到显示歌曲的div可以看这个div的ul里面的li包含 这些歌曲所有的信息而且结构是一样的只有歌曲信息不同：</p>
-<p><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/17/5d075192d629021290.png"><br>我们只需要知道一首歌的结构就行了<br>利用选择工具选中第一首歌曲，选中后就右边的源码就定位到了响应的地方如图：<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/17/5d074cfb692d624313.png"><br>排名： 用选择工具选择 歌名旁边的数值，这个就是它的排名<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/17/5d074e922f03a49863.png"><br>这时候我们就需要用到beautifulsoup这个库了，用这个库可以快速的获取到这个文本：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">url &#x3D; &quot;https:&#x2F;&#x2F;www.kugou.com&#x2F;yy&#x2F;rank&#x2F;home&#x2F;1-8888.html&quot;</span><br><span class="line">Headers &#x3D; &#123;</span><br><span class="line">&#39;User-Agent&#39;: &#39;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;70.0.3538.67 Safari&#x2F;537.36&#39;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">response &#x3D; requests.get(url,headers &#x3D; Headers)</span><br><span class="line"></span><br><span class="line">#将页面源码解析</span><br><span class="line">soup &#x3D; BeautifulSoup(response.text,&#39;lxml&#39;)</span><br><span class="line"></span><br><span class="line">#获取到这页所有的排名  select查找的意思，span.pc_temp_num是查找span里面属性pc_temp_num</span><br><span class="line">ranks &#x3D; soup.select(&quot;span.pc_temp_num&quot;)</span><br><span class="line"></span><br><span class="line">#获取所有的歌名，div.pc_temp_songlist&gt;ul&gt;li&gt;a 这是歌名文本所在的位置</span><br><span class="line">titles &#x3D; soup.select(&quot;div.pc_temp_songlist&gt;ul&gt;li&gt;a&quot;)</span><br><span class="line"></span><br><span class="line">#获取所有歌曲时长</span><br><span class="line">times &#x3D; soup.select(&quot;div.pc_temp_songlist &gt; ul &gt; li &gt; span.pc_temp_tips_r &gt; span&quot;)</span><br><span class="line"></span><br><span class="line">#遍历输出第一页所有的歌曲信息</span><br><span class="line">for rank,title,time in zip(ranks,titles,times):</span><br><span class="line">    print(&quot;排名：&quot;+rank.text.strip()+&quot;-----歌名：&quot;+title.text.strip() +&quot;----时间：&quot;+time.text.strip())</span><br></pre></td></tr></table></figure>
-<p><strong>结果：</strong></p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">排名：1-----歌名：G.E.M.邓紫棋 - 来自天堂的魔鬼 (Live)----时间：4:06</span><br><span class="line">排名：2-----歌名：海来阿木、阿呷拉古、曲比阿且 - 别知己----时间：4:40</span><br><span class="line">排名：3-----歌名：隔壁老樊 - 多想在平庸的生活拥抱你 (Live)----时间：4:29</span><br><span class="line">排名：4-----歌名：陈雪凝 - 你的酒馆对我打了烊----时间：4:11</span><br><span class="line">排名：5-----歌名：蕾蕾的小麦霸们、张振轩 - 赢在江湖 (童声版)----时间：3:46</span><br><span class="line">排名：6-----歌名：魏新雨 - 余情未了----时间：3:36</span><br><span class="line">排名：7-----歌名：王力宏、谭维维 - 缘分一道桥----时间：4:06</span><br><span class="line">排名：8-----歌名：Yusee西 - 心如止水----时间：3:02</span><br><span class="line">排名：9-----歌名：陈雪凝 - 绿色----时间：4:29</span><br><span class="line">排名：10-----歌名：焦迈奇 - 我的名字----时间：4:11</span><br><span class="line">排名：11-----歌名：半吨兄弟 - 爱情错觉----时间：4:03</span><br><span class="line">排名：12-----歌名：Ice Paper - 心如止水----时间：3:05</span><br><span class="line">排名：13-----歌名：王琪 - 万爱千恩----时间：5:22</span><br><span class="line">排名：14-----歌名：王小帅 - 最近 (正式版)----时间：3:37</span><br><span class="line">排名：15-----歌名：杨胖雨 - 情深深雨濛濛----时间：2:35</span><br><span class="line">排名：16-----歌名：虎二 - 你一定要幸福----时间：4:19</span><br><span class="line">排名：17-----歌名：大壮 - 伪装----时间：5:01</span><br><span class="line">排名：18-----歌名：孤独诗人 - 渡我不渡她----时间：3:02</span><br><span class="line">排名：19-----歌名：王贰浪 - 像鱼----时间：4:45</span><br><span class="line">排名：20-----歌名：NCF-艾力 - 黎明前的黑暗 (女声版)----时间：2:25</span><br><span class="line">排名：21-----歌名：大欢 - 多年以后----时间：4:03</span><br><span class="line">排名：22-----歌名：彭十六elf - 戏影----时间：3:40</span><br></pre></td></tr></table></figure>
-<p>这样就将第一页的所有歌曲信息都爬取下来了，只要第一页搞定，其他页也是相同的原理，只是URL不同而已。<br>修改代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">Headers &#x3D; &#123;</span><br><span class="line">&#39;User-Agent&#39;: &#39;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;70.0.3538.67 Safari&#x2F;537.36&#39;</span><br><span class="line">&#125;</span><br><span class="line">def get_info(url):</span><br><span class="line">    response &#x3D; requests.get(url,headers &#x3D; Headers)</span><br><span class="line">    soup &#x3D; BeautifulSoup(response.text,&#39;lxml&#39;)</span><br><span class="line">    ranks &#x3D; soup.select(&quot;span.pc_temp_num&quot;)</span><br><span class="line">    titles &#x3D; soup.select(&quot;div.pc_temp_songlist&gt;ul&gt;li&gt;a&quot;)</span><br><span class="line">    times &#x3D; soup.select(&quot;div.pc_temp_songlist &gt; ul &gt; li &gt; span.pc_temp_tips_r &gt; span&quot;)</span><br><span class="line">    for rank, title, time in zip(ranks, titles, times):</span><br><span class="line">        print(&quot;排名：&quot; + rank.text.strip() + &quot;-----歌名：&quot; + title.text.strip() + &quot;----时间：&quot; + time.text.strip())</span><br><span class="line"></span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    urls &#x3D; [&#39;http:&#x2F;&#x2F;www.kugou.com&#x2F;yy&#x2F;rank&#x2F;home&#x2F;&#123;&#125;-8888.html&#39; .format(number)for number in range(1, 24)]</span><br><span class="line">    for url in urls:</span><br><span class="line">        get_info(url)</span><br></pre></td></tr></table></figure>
-<p>结果：<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/17/5d0765adc58c785194.gif"><br>完结！！！ 是不是超级简单！！！</p>
 ]]></content>
       <categories>
         <category>python</category>
@@ -1059,6 +1059,32 @@ board = Arduino(&#39;COM3&#39;) while 1:
       </tags>
   </entry>
   <entry>
+    <title>python爬虫实例(二)--爬取猫眼电影最受期待排行榜</title>
+    <url>/2019/ec8f6773.html</url>
+    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这次使用的还是requests+beautifulsoup这两个库，方法也可之前 <a href="http://t.cn/AiNB2OYu">爬取酷狗TOP500音乐信息</a>一样，分析链接，然后分析网页结构。抓取电影的  排名，片名，上映时间，主演</p>
+<h3 id="分析链接"><a href="#分析链接" class="headerlink" title="分析链接"></a>分析链接</h3><p><a href="https://maoyan.com/board/6">https://maoyan.com/board/6</a> 这个链接就是猫眼最受期待电影排行榜，这个跟酷狗不一样这个有翻页，可以很快的观察出每一的链接，一共5页。</p>
+<p>我们可以先点击第二页观察连接：<a href="https://maoyan.com/board/6?offset=10">https://maoyan.com/board/6?offset=10</a>    ，发现多了一个 ?offset=10 我们继续点击第三页观察链接：<a href="https://maoyan.com/board/6?offset=20">https://maoyan.com/board/6?offset=20</a>     ，发现链接的?offset=10变成的?offset=20</p>
+<a id="more"></a>
+<p>在点击第一页 观察链接：<a href="https://maoyan.com/board/6?offset=0">https://maoyan.com/board/6?offset=0</a>   ，可以看到?offset=0  可以总结出  每点击下一页offset的值增加10，总共有5页，所以我们总共有5个链接，每页有10个电影，总共50个电影</p>
+<h3 id="分析网页结构"><a href="#分析网页结构" class="headerlink" title="分析网页结构"></a>分析网页结构</h3><p>回到第一页，打开审查元素，选中第一个电影。可以看到10个dd的标签，每个标签里面都对应一部电影的信息<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/19/5d0a50809e73074722.png"><br>打开第一个dd标签，可以看到 片名，片名，主演和上映时间等信息：<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/19/5d0a5173488fe11254.png"></p>
+<p>以获取排名举例，其他信息都是一样的操作<br>选中排名的 <strong>i</strong> 标签，右键–&gt; copy–&gt; copy selector,可以得到一串代码，我们就需要利用beautifulsoup通过这串代码定位到排名</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#app &gt; div &gt; div &gt; div.main &gt; dl &gt; dd:nth-child(1) &gt; i</span><br></pre></td></tr></table></figure>
+<p>copy下来的只是对应这一个电影的排名，我们需要获取到所有排名，所以我们需要将复制的代码修改如下：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#app &gt; div &gt; div &gt; div.main &gt; dl &gt; dd &gt; i</span><br></pre></td></tr></table></figure>
+<p>这样就可以获取当前页所有电影的排名</p>
+<p>其他信息也是相同的操作，选中对应的标签，右键–&gt; copy–&gt; copy selector 然后删除dd后面的 <code>:nth-child(1)</code>  这几个字符</p>
+<p>完整代码：</p>
+<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">Headers &#x3D; &#123;</span><br><span class="line">&#39;User-Agent&#39;: &#39;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;70.0.3538.67 Safari&#x2F;537.36&#39;</span><br><span class="line">&#125;</span><br><span class="line">def get_info(url):</span><br><span class="line">    response &#x3D; requests.get(url,headers &#x3D; Headers)</span><br><span class="line">    soup &#x3D; BeautifulSoup(response.text,&#39;lxml&#39;)</span><br><span class="line">    ranks &#x3D; soup.select(&quot;#app &gt; div &gt; div &gt; div.main &gt; dl &gt; dd &gt; i&quot;)</span><br><span class="line">    titles &#x3D; soup.select(&quot;#app &gt; div &gt; div &gt; div.main &gt; dl &gt; dd &gt; div &gt; div &gt; div.movie-item-info &gt; p.name &gt; a&quot;)</span><br><span class="line">    stars &#x3D; soup.select(&quot;#app &gt; div &gt; div &gt; div.main &gt; dl &gt; dd &gt; div &gt; div &gt; div.movie-item-info &gt; p.star&quot;)</span><br><span class="line">    times &#x3D; soup.select(&quot;#app &gt; div &gt; div &gt; div.main &gt; dl &gt; dd &gt; div &gt; div &gt; div.movie-item-info &gt; p.releasetime&quot;)</span><br><span class="line">    wants &#x3D; soup.select(&quot;#app &gt; div &gt; div &gt; div.main &gt; dl &gt; dd &gt; div &gt; div &gt; div.movie-item-number.wish &gt; p.month-wish &gt; span &gt; span&quot;)</span><br><span class="line">    for rank,title,star,time,want in zip(ranks,titles,stars,times,wants):</span><br><span class="line">        print(&quot;排名：&quot; + rank.text.strip()+&quot;----&quot;+&quot;片名：&quot; +title.text.strip()+&quot;-----&quot;+star.text.strip()+&quot;----&quot;+time.text.strip())</span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    #生成对应的5个页面的链接</span><br><span class="line">    urls &#x3D; [&#39;https:&#x2F;&#x2F;maoyan.com&#x2F;board&#x2F;6?offset&#x3D;&#123;&#125;&#39; .format(offset*10)for offset in range(6)]</span><br><span class="line">    for url in urls:</span><br><span class="line">        get_info(url)</span><br></pre></td></tr></table></figure>
+<p>结果：<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/19/5d0a54c7949b260142.gif"></p>
+]]></content>
+      <categories>
+        <category>python</category>
+      </categories>
+      <tags>
+        <tag>爬虫</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>python爬虫(二)-用urllib实现百度翻译</title>
     <url>/2019/175951a3.html</url>
     <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>上一篇内容，已经学会了使用简单的语句对网页进行抓取。接下来，详细看下urlopen的两个重要参数url和data，学习如何发送数据data。我们想做一个百度翻译就需要向百度翻译的服务器发送我们想要翻译的内容。</p>
@@ -1095,30 +1121,29 @@ board = Arduino(&#39;COM3&#39;) while 1:
       </tags>
   </entry>
   <entry>
-    <title>python爬虫实例(二)--爬取猫眼电影最受期待排行榜</title>
-    <url>/2019/ec8f6773.html</url>
-    <content><![CDATA[<h3 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h3><p>这次使用的还是requests+beautifulsoup这两个库，方法也可之前 <a href="http://t.cn/AiNB2OYu">爬取酷狗TOP500音乐信息</a>一样，分析链接，然后分析网页结构。抓取电影的  排名，片名，上映时间，主演</p>
-<h3 id="分析链接"><a href="#分析链接" class="headerlink" title="分析链接"></a>分析链接</h3><p><a href="https://maoyan.com/board/6">https://maoyan.com/board/6</a> 这个链接就是猫眼最受期待电影排行榜，这个跟酷狗不一样这个有翻页，可以很快的观察出每一的链接，一共5页。</p>
-<p>我们可以先点击第二页观察连接：<a href="https://maoyan.com/board/6?offset=10">https://maoyan.com/board/6?offset=10</a>    ，发现多了一个 ?offset=10 我们继续点击第三页观察链接：<a href="https://maoyan.com/board/6?offset=20">https://maoyan.com/board/6?offset=20</a>     ，发现链接的?offset=10变成的?offset=20</p>
-<a id="more"></a>
-<p>在点击第一页 观察链接：<a href="https://maoyan.com/board/6?offset=0">https://maoyan.com/board/6?offset=0</a>   ，可以看到?offset=0  可以总结出  每点击下一页offset的值增加10，总共有5页，所以我们总共有5个链接，每页有10个电影，总共50个电影</p>
-<h3 id="分析网页结构"><a href="#分析网页结构" class="headerlink" title="分析网页结构"></a>分析网页结构</h3><p>回到第一页，打开审查元素，选中第一个电影。可以看到10个dd的标签，每个标签里面都对应一部电影的信息<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/19/5d0a50809e73074722.png"><br>打开第一个dd标签，可以看到 片名，片名，主演和上映时间等信息：<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/19/5d0a5173488fe11254.png"></p>
-<p>以获取排名举例，其他信息都是一样的操作<br>选中排名的 <strong>i</strong> 标签，右键–&gt; copy–&gt; copy selector,可以得到一串代码，我们就需要利用beautifulsoup通过这串代码定位到排名</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#app &gt; div &gt; div &gt; div.main &gt; dl &gt; dd:nth-child(1) &gt; i</span><br></pre></td></tr></table></figure>
-<p>copy下来的只是对应这一个电影的排名，我们需要获取到所有排名，所以我们需要将复制的代码修改如下：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">#app &gt; div &gt; div &gt; div.main &gt; dl &gt; dd &gt; i</span><br></pre></td></tr></table></figure>
-<p>这样就可以获取当前页所有电影的排名</p>
-<p>其他信息也是相同的操作，选中对应的标签，右键–&gt; copy–&gt; copy selector 然后删除dd后面的 <code>:nth-child(1)</code>  这几个字符</p>
-<p>完整代码：</p>
-<figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">import requests</span><br><span class="line">from bs4 import BeautifulSoup</span><br><span class="line">Headers &#x3D; &#123;</span><br><span class="line">&#39;User-Agent&#39;: &#39;Mozilla&#x2F;5.0 (Windows NT 10.0; Win64; x64) AppleWebKit&#x2F;537.36 (KHTML, like Gecko) Chrome&#x2F;70.0.3538.67 Safari&#x2F;537.36&#39;</span><br><span class="line">&#125;</span><br><span class="line">def get_info(url):</span><br><span class="line">    response &#x3D; requests.get(url,headers &#x3D; Headers)</span><br><span class="line">    soup &#x3D; BeautifulSoup(response.text,&#39;lxml&#39;)</span><br><span class="line">    ranks &#x3D; soup.select(&quot;#app &gt; div &gt; div &gt; div.main &gt; dl &gt; dd &gt; i&quot;)</span><br><span class="line">    titles &#x3D; soup.select(&quot;#app &gt; div &gt; div &gt; div.main &gt; dl &gt; dd &gt; div &gt; div &gt; div.movie-item-info &gt; p.name &gt; a&quot;)</span><br><span class="line">    stars &#x3D; soup.select(&quot;#app &gt; div &gt; div &gt; div.main &gt; dl &gt; dd &gt; div &gt; div &gt; div.movie-item-info &gt; p.star&quot;)</span><br><span class="line">    times &#x3D; soup.select(&quot;#app &gt; div &gt; div &gt; div.main &gt; dl &gt; dd &gt; div &gt; div &gt; div.movie-item-info &gt; p.releasetime&quot;)</span><br><span class="line">    wants &#x3D; soup.select(&quot;#app &gt; div &gt; div &gt; div.main &gt; dl &gt; dd &gt; div &gt; div &gt; div.movie-item-number.wish &gt; p.month-wish &gt; span &gt; span&quot;)</span><br><span class="line">    for rank,title,star,time,want in zip(ranks,titles,stars,times,wants):</span><br><span class="line">        print(&quot;排名：&quot; + rank.text.strip()+&quot;----&quot;+&quot;片名：&quot; +title.text.strip()+&quot;-----&quot;+star.text.strip()+&quot;----&quot;+time.text.strip())</span><br><span class="line">if __name__ &#x3D;&#x3D; &#39;__main__&#39;:</span><br><span class="line">    #生成对应的5个页面的链接</span><br><span class="line">    urls &#x3D; [&#39;https:&#x2F;&#x2F;maoyan.com&#x2F;board&#x2F;6?offset&#x3D;&#123;&#125;&#39; .format(offset*10)for offset in range(6)]</span><br><span class="line">    for url in urls:</span><br><span class="line">        get_info(url)</span><br></pre></td></tr></table></figure>
-<p>结果：<br><img src= "/img/loading.gif" data-lazy-src="https://i.loli.net/2019/06/19/5d0a54c7949b260142.gif"></p>
+    <title>构造函数与this关键字</title>
+    <url>/2019/d660badb.html</url>
+    <content><![CDATA[<h1 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h1><ul>
+<li>在开发中经常需要在创建对象的同时明确对象的属性值，比如员工入职公司就要明确他的姓名、年龄等属性信息</li>
+<li>那么，创建对象就要明确属性值，那怎么解决呢？也就是在创建对象的时候就要做的事情，当使用new关键字创建对象时，怎么给对象的属性初始化值呢？这就要学习Java另外一门小技术，构造方法</li>
+<li>那什么是构造方法呢？从字面上理解即为构建创造时用的方法，即就是对象创建时要执行的方法。既然是对象创建时要执行的方法，那么只要在new对象时，知道其执行的构造方法是什么，就可以在执行这个方法的时候给对象进行属性赋值</li>
+</ul>
+<h2 id="构造方法格式"><a href="#构造方法格式" class="headerlink" title="构造方法格式"></a>构造方法格式</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">修饰符 构造方法名(参数列表)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="构造方法的体现"><a href="#构造方法的体现" class="headerlink" title="构造方法的体现"></a>构造方法的体现</h2><ul>
+<li>构造方法没有返回值类型。也不需要写返回值。因为它是为构建对象的，对象创建完，方法就执行结束</li>
+<li>构造方法名称必须和类型保持一致</li>
+<li>构造方法没有具体的返回值</li>
+</ul>
+<h2 id="构造方法的代码体现"><a href="#构造方法的代码体现" class="headerlink" title="构造方法的代码体现"></a>构造方法的代码体现</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">        &#x2F;&#x2F; Person的成员属性age和name</span><br><span class="line">        int age;</span><br><span class="line">        String name;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Person的构造方法，拥有参数列表</span><br><span class="line">        Person(int age, String name) &#123;</span><br><span class="line">	        &#x2F;&#x2F; 接受到创建对象时传递进来的值，将值赋给成员属性</span><br><span class="line">	        this.age &#x3D; age;</span><br><span class="line">	        this.name &#x3D; name;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        public void speak() &#123;</span><br><span class="line">	        System.out.println(&quot;name&#x3D;&quot; + name + &quot;,age&#x3D;&quot; + age);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h1 id="this-关键字"><a href="#this-关键字" class="headerlink" title="this 关键字"></a>this 关键字</h1><ul>
+<li>this 代表使用者</li>
+</ul>
 ]]></content>
       <categories>
-        <category>python</category>
+        <category>Java</category>
       </categories>
-      <tags>
-        <tag>爬虫</tag>
-      </tags>
   </entry>
   <entry>
     <title>启动redis报错Creating Server TCP listening socket 127.0.0.1_6379_ bind_ No error</title>
@@ -1151,31 +1176,6 @@ SESSION_REDIS = &#123;
       <tags>
         <tag>redis</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>构造函数与this关键字</title>
-    <url>/2019/d660badb.html</url>
-    <content><![CDATA[<h1 id="构造方法"><a href="#构造方法" class="headerlink" title="构造方法"></a>构造方法</h1><ul>
-<li>在开发中经常需要在创建对象的同时明确对象的属性值，比如员工入职公司就要明确他的姓名、年龄等属性信息</li>
-<li>那么，创建对象就要明确属性值，那怎么解决呢？也就是在创建对象的时候就要做的事情，当使用new关键字创建对象时，怎么给对象的属性初始化值呢？这就要学习Java另外一门小技术，构造方法</li>
-<li>那什么是构造方法呢？从字面上理解即为构建创造时用的方法，即就是对象创建时要执行的方法。既然是对象创建时要执行的方法，那么只要在new对象时，知道其执行的构造方法是什么，就可以在执行这个方法的时候给对象进行属性赋值</li>
-</ul>
-<h2 id="构造方法格式"><a href="#构造方法格式" class="headerlink" title="构造方法格式"></a>构造方法格式</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">修饰符 构造方法名(参数列表)&#123;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<h2 id="构造方法的体现"><a href="#构造方法的体现" class="headerlink" title="构造方法的体现"></a>构造方法的体现</h2><ul>
-<li>构造方法没有返回值类型。也不需要写返回值。因为它是为构建对象的，对象创建完，方法就执行结束</li>
-<li>构造方法名称必须和类型保持一致</li>
-<li>构造方法没有具体的返回值</li>
-</ul>
-<h2 id="构造方法的代码体现"><a href="#构造方法的代码体现" class="headerlink" title="构造方法的代码体现"></a>构造方法的代码体现</h2><figure class="highlight plain"><table><tr><td class="code"><pre><span class="line">class Person &#123;</span><br><span class="line">        &#x2F;&#x2F; Person的成员属性age和name</span><br><span class="line">        int age;</span><br><span class="line">        String name;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; Person的构造方法，拥有参数列表</span><br><span class="line">        Person(int age, String name) &#123;</span><br><span class="line">	        &#x2F;&#x2F; 接受到创建对象时传递进来的值，将值赋给成员属性</span><br><span class="line">	        this.age &#x3D; age;</span><br><span class="line">	        this.name &#x3D; name;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        public void speak() &#123;</span><br><span class="line">	        System.out.println(&quot;name&#x3D;&quot; + name + &quot;,age&#x3D;&quot; + age);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
-
-<h1 id="this-关键字"><a href="#this-关键字" class="headerlink" title="this 关键字"></a>this 关键字</h1><ul>
-<li>this 代表使用者</li>
-</ul>
-]]></content>
-      <categories>
-        <category>Java</category>
-      </categories>
   </entry>
   <entry>
     <title>struts2入门例子登录demo</title>
@@ -1213,22 +1213,6 @@ SESSION_REDIS = &#123;
       <tags>
         <tag>struts2</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>哈哈哈哈哈！！</title>
-    <url>/2019/1260caaa.html</url>
-    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
-  <div class="hbe-input-container">
-  <input type="password" id="hbePass" placeholder="" />
-    <label for="hbePass">您好, 这里需要密码.</label>
-    <div class="bottom-line"></div>
-  </div>
-  <script id="hbeData" type="hbeData" data-hmacdigest="37ee889f9517696d35605c251d044706e226e62bc874c2fb64c894cb39d8c345">5e3957a17dd6d424483d8fa10d343c3d152c54e533fece45aef30fb882fb52ae2f702ccb94a4b535c3dbc3ac3bf667dd4a410bf93700ea5f9933d90f1d6dd56b60165a18bb900027f23301e49000af3c74bf31a2c478949670f50be78ed6f472d3887437ec0af41b31f5135ed5d3ddb50f5c11fb678ede52c0bd7cb4e221b7d6866a08d83c8f502519800d0c18ba62b8de2096f15ff5f08f723e740ec1c69916ba4299c2b4fe64398629034bc8debfe74639086e62a047328bab7e1a6f7444538d86e531a9fd5e4a66876a60199a2c4123e4deba34e09edf9e772ca2b41f17d3130772874eede3391c2b23f66eed45628f6ec1158464836b6d32423fd77f46a06a93005a8521f35a3ced995cba3c4302acef486dc829938e28d54e02eb4acff43adb485e3fc4645e26895882ae7c61493a65dc5bca3ac63f4eb9ded5ff548c51d483ec2e8b0516ee3a97a6cf3b23d6d51330780e5acebc71f9e4d4494607daa88a16bca59042efef229839f9c9a274c6f66d2bc7dbbdf72360225ade670d089ea60c3fad18806cdbfe2a9b83cd4bf59d9b15084e4eadb0fbf5ce8c484e735f3bd22498836ce6c41e3c252bbc18bfef58ad731406efad8f4f7b896ef4c9cfdf9e85d493584e70fac25de211cfd4358536a8c87a7b4878e36e3aca47da7173fd2f7627043be5398d2dc9d21ebbc834d8ced8903f524e33a5c9106d805ffee99f6556a1d1eacb629e342f3672dd11b05c2475c1a4811a0d13ad2c655a0546f9aab469d6ed7b7e3983ac1d6c1c4a061566cc4bb573b66fa815e2f48fa109b7d0116cb7fd56b003bd61df5003d1460d577c4708d6570227c7f1235c82308e8c6c36a36f7608c0a1bd7077ce385dd9b32f155c952a08bfa78e0fba175ae61412b8aa74b92bfb30fe80d513adb7ea71852f2608d46eaf4e003e137aabd3ccad6c968cfd7beb2c352fb64430df9a671cceb2ad7d764bea81830b1d745d818895363201b6e55ec898f4405b29459e219465ee6174f45b27eb41df5bf6118e36e7320cefb67c198e1d94a93539de37d8037f5105a05517e0778baf00e02ef6f1ae15b20d4af9bacec393c5309f30db17b10bdf96e51c9a991caf1d5de2a1a4969da8f71c1e290977bbb25d6e31b8953565a70395cdfc1c6ad060caaed4f755bbcb9e3bc142f599960406f2446ad46f30d76ad8b58695a14f72658190ecd547309ea0d67b3aba0bcc31efcd697fc22a6977bb7129842d374cd192f557c4c4ef01d8920e073d243cc4b755bd4f52a3c62a4fd161cc67e22420aaddc279c5001c94290db354d8c8b7c17eb1422fdbabc9595642f666c878a1a87ab302eb66eba8a31503aaea491cd9e2d68ae25b24378e34e894cf60a13d17f06541cba7799a9c72cd360e312c5a9cf76ec8aaf7590ce3a4eec4e4f4d94c020ab4b068cd58476e551f4c9f6a3a2637306e93fa929394190c7eea57a7c220d6226fa8b6a35f165bee2df28a96a81440b8c0025313c4211d41e46c5a3915e3e84ea73c0cdac337135586930eba657c40971267cb540ba18cf9dcc130a3ff637fa932c2a63ea43e872adbbe8dae3315fcdcf3d3682600b2566d6a1499c8da62a298bded141c45298bb1978d32d1956a7c6036ab4d20dc53d5b023685f8dc7970d92973aac3e82c6b23c67c0055246b346d05fa6f232eba8885861dc6186037827e9b13e9e5b0160906e489767fc4abd2246d48bc6d9da8924c4d47cbb3b96e948f8facd43e3b638002ee62bf6d6cc7089858948d6da40f3a85c9ce840ec226a07c13aacdedbe5cc348b9b96d63db4425cc46836bc8bccb10b949b2b0b74e22344f8ec856718ddc898083751fa3993af0c106a7471922e059ca888d2a7f907f18715ebc9249b2b7d29258656dbf30dbfba4ba26e3a62bfd226f22b592b98887c475da9fb7dc027593e401ac9962df542ee1405f8f32950869b2c51382c06995779a79c55d494bac61fbb041034bbead3cd82184d4eb9c6fe74cfc7da8bee6d00eb06afdb9dbfb8e25f9c6160b7313cea3c983f373980ec6b1153cc44c5c32a05be100d696216b60905c28acffcfd36d2b3c5ecfe178f83976df7118abcc0b81881f50c3f96a0a4d421e726e3276786f18eb667fa55a9788be18804eb979d288454521705568923961f8b0cf5c174ce6acf6405a6db9909a0ba2b5e71b35e15b377988f128c4cf8d561aeb34a74f1f0e90221eb7fb09b7f1875fc9c49af7a04a266a6a61c8910a0effabb1b54297ce9b3264d0596fcca415647c01972466db25fbb48e309be56ad3ebfeaec365622034eeb4ad9fe1d617d196e187dca9bfc0dd664a6b6096458a9c8edb5c93bab739162f8f4bdf7c4145bfd29941436a74e590ced175eee84a6dbb77d90e65e2d642ef7174f2510a6a3b145ddd707ffdb8f93eb5ef8787132ed2699915ce48d681157899b3866e60b19c313e06fb4e0fac1e90efe7416c8ea616a5ce017178357f0df22034a5d22b2ede123d3ee6e0bc7bc1426cb1156c3d8a426e6720a3ee298f587ae27adfaa2a468b813b3ab49559f0f098074addc84400ba07268bb6538ade964cd383c8d710ec58604a2033fc7b2fcd83e77ebe49cda2bb97768e74a0453038491f2816e04fd168cb9f6ca1a76fac5d25bb80b7731e847433c5f1a0a632fb9494e2271add9161952e6a437fe09b8400d</script>
-</div>
-<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
-      <categories>
-        <category>随笔</category>
-      </categories>
   </entry>
   <entry>
     <title>阿里云centos服务器配置mysql与Navicat for MySQL远程连接</title>
@@ -1314,6 +1298,22 @@ openssh-6.6.1p1-12.el7_1.x86_64</code></pre>
       <tags>
         <tag>mysql</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>哈哈哈哈哈！！</title>
+    <url>/2019/1260caaa.html</url>
+    <content><![CDATA[<div id="hexo-blog-encrypt" data-wpm="抱歉, 这个密码看着不太对, 请再试试." data-whm="抱歉, 这个文章不能被校验, 不过您还是能看看解密后的内容.">
+  <div class="hbe-input-container">
+  <input type="password" id="hbePass" placeholder="" />
+    <label for="hbePass">您好, 这里需要密码.</label>
+    <div class="bottom-line"></div>
+  </div>
+  <script id="hbeData" type="hbeData" data-hmacdigest="37ee889f9517696d35605c251d044706e226e62bc874c2fb64c894cb39d8c345">5e3957a17dd6d424483d8fa10d343c3d152c54e533fece45aef30fb882fb52ae2f702ccb94a4b535c3dbc3ac3bf667dd4a410bf93700ea5f9933d90f1d6dd56b60165a18bb900027f23301e49000af3c74bf31a2c478949670f50be78ed6f472d3887437ec0af41b31f5135ed5d3ddb50f5c11fb678ede52c0bd7cb4e221b7d6866a08d83c8f502519800d0c18ba62b8de2096f15ff5f08f723e740ec1c69916ba4299c2b4fe64398629034bc8debfe74639086e62a047328bab7e1a6f7444538d86e531a9fd5e4a66876a60199a2c4123e4deba34e09edf9e772ca2b41f17d3130772874eede3391c2b23f66eed45628f6ec1158464836b6d32423fd77f46a06a93005a8521f35a3ced995cba3c4302acef486dc829938e28d54e02eb4acff43adb485e3fc4645e26895882ae7c61493a65dc5bca3ac63f4eb9ded5ff548c51d483ec2e8b0516ee3a97a6cf3b23d6d51330780e5acebc71f9e4d4494607daa88a16bca59042efef229839f9c9a274c6f66d2bc7dbbdf72360225ade670d089ea60c3fad18806cdbfe2a9b83cd4bf59d9b15084e4eadb0fbf5ce8c484e735f3bd22498836ce6c41e3c252bbc18bfef58ad731406efad8f4f7b896ef4c9cfdf9e85d493584e70fac25de211cfd4358536a8c87a7b4878e36e3aca47da7173fd2f7627043be5398d2dc9d21ebbc834d8ced8903f524e33a5c9106d805ffee99f6556a1d1eacb629e342f3672dd11b05c2475c1a4811a0d13ad2c655a0546f9aab469d6ed7b7e3983ac1d6c1c4a061566cc4bb573b66fa815e2f48fa109b7d0116cb7fd56b003bd61df5003d1460d577c4708d6570227c7f1235c82308e8c6c36a36f7608c0a1bd7077ce385dd9b32f155c952a08bfa78e0fba175ae61412b8aa74b92bfb30fe80d513adb7ea71852f2608d46eaf4e003e137aabd3ccad6c968cfd7beb2c352fb64430df9a671cceb2ad7d764bea81830b1d745d818895363201b6e55ec898f4405b29459e219465ee6174f45b27eb41df5bf6118e36e7320cefb67c198e1d94a93539de37d8037f5105a05517e0778baf00e02ef6f1ae15b20d4af9bacec393c5309f30db17b10bdf96e51c9a991caf1d5de2a1a4969da8f71c1e290977bbb25d6e31b8953565a70395cdfc1c6ad060caaed4f755bbcb9e3bc142f599960406f2446ad46f30d76ad8b58695a14f72658190ecd547309ea0d67b3aba0bcc31efcd697fc22a6977bb7129842d374cd192f557c4c4ef01d8920e073d243cc4b755bd4f52a3c62a4fd161cc67e22420aaddc279c5001c94290db354d8c8b7c17eb1422fdbabc9595642f666c878a1a87ab302eb66eba8a31503aaea491cd9e2d68ae25b24378e34e894cf60a13d17f06541cba7799a9c72cd360e312c5a9cf76ec8aaf7590ce3a4eec4e4f4d94c020ab4b068cd58476e551f4c9f6a3a2637306e93fa929394190c7eea57a7c220d6226fa8b6a35f165bee2df28a96a81440b8c0025313c4211d41e46c5a3915e3e84ea73c0cdac337135586930eba657c40971267cb540ba18cf9dcc130a3ff637fa932c2a63ea43e872adbbe8dae3315fcdcf3d3682600b2566d6a1499c8da62a298bded141c45298bb1978d32d1956a7c6036ab4d20dc53d5b023685f8dc7970d92973aac3e82c6b23c67c0055246b346d05fa6f232eba8885861dc6186037827e9b13e9e5b0160906e489767fc4abd2246d48bc6d9da8924c4d47cbb3b96e948f8facd43e3b638002ee62bf6d6cc7089858948d6da40f3a85c9ce840ec226a07c13aacdedbe5cc348b9b96d63db4425cc46836bc8bccb10b949b2b0b74e22344f8ec856718ddc898083751fa3993af0c106a7471922e059ca888d2a7f907f18715ebc9249b2b7d29258656dbf30dbfba4ba26e3a62bfd226f22b592b98887c475da9fb7dc027593e401ac9962df542ee1405f8f32950869b2c51382c06995779a79c55d494bac61fbb041034bbead3cd82184d4eb9c6fe74cfc7da8bee6d00eb06afdb9dbfb8e25f9c6160b7313cea3c983f373980ec6b1153cc44c5c32a05be100d696216b60905c28acffcfd36d2b3c5ecfe178f83976df7118abcc0b81881f50c3f96a0a4d421e726e3276786f18eb667fa55a9788be18804eb979d288454521705568923961f8b0cf5c174ce6acf6405a6db9909a0ba2b5e71b35e15b377988f128c4cf8d561aeb34a74f1f0e90221eb7fb09b7f1875fc9c49af7a04a266a6a61c8910a0effabb1b54297ce9b3264d0596fcca415647c01972466db25fbb48e309be56ad3ebfeaec365622034eeb4ad9fe1d617d196e187dca9bfc0dd664a6b6096458a9c8edb5c93bab739162f8f4bdf7c4145bfd29941436a74e590ced175eee84a6dbb77d90e65e2d642ef7174f2510a6a3b145ddd707ffdb8f93eb5ef8787132ed2699915ce48d681157899b3866e60b19c313e06fb4e0fac1e90efe7416c8ea616a5ce017178357f0df22034a5d22b2ede123d3ee6e0bc7bc1426cb1156c3d8a426e6720a3ee298f587ae27adfaa2a468b813b3ab49559f0f098074addc84400ba07268bb6538ade964cd383c8d710ec58604a2033fc7b2fcd83e77ebe49cda2bb97768e74a0453038491f2816e04fd168cb9f6ca1a76fac5d25bb80b7731e847433c5f1a0a632fb9494e2271add9161952e6a437fe09b8400d</script>
+</div>
+<script src="/lib/blog-encrypt.js"></script><link href="/css/blog-encrypt.css" rel="stylesheet" type="text/css">]]></content>
+      <categories>
+        <category>随笔</category>
+      </categories>
   </entry>
   <entry>
     <title>python3爬虫(五)--requests库的基本使用</title>
